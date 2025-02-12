@@ -7,27 +7,34 @@ data modify storage spawner_tweaker:temp spawner set from block ~ ~ ~
 execute at @s run tp @s ~ ~ ~ ~10 ~
 team join spawner_tweaker_red @s
 $execute if entity @a[distance=..$(RequiredPlayerRange),tag=holding_spawner] run team join spawner_tweaker_green @s
+execute as 4a3f09af-b376-485e-a73a-a4566af88748 at @s run tp @s ~ ~ ~ 0 0
 
-#Player range color
-#$execute positioned ^ ^ ^$(RequiredPlayerRange) positioned ~ ~0.4 ~ run particle angry_villager ~ ~ ~ 0 0 0 0 1 force
-#$execute positioned ^ ^ ^-$(RequiredPlayerRange) positioned ~ ~0.4 ~ run particle angry_villager ~ ~ ~ 0 0 0 0 1 force
-#$execute positioned ^$(RequiredPlayerRange) ^ ^ positioned ~ ~0.4 ~ run particle angry_villager ~ ~ ~ 0 0 0 0 1 force
-#$execute positioned ^-$(RequiredPlayerRange) ^ ^ positioned ~ ~0.4 ~ run particle angry_villager ~ ~ ~ 0 0 0 0 1 force
+execute as 6bfec13b-598f-4bae-a827-47d28c4ed07f at @s run tp @s ~ ~ ~ 45 0
+execute as da2312b0-3f93-4a23-924e-6e3c44671606 at @s run tp @s ~ ~ ~ 90 0
+execute as d50c642b-1f61-4279-ac82-b466969b76b2 at @s run tp @s ~ ~ ~ 135 0
+execute as 44e9d1cf-3203-443e-951d-93bc841abf3f at @s run tp @s ~ ~ ~ 0 0
+execute as 2ebaaca0-b021-44a3-b0ee-e757109f6f28 at @s run tp @s ~ ~ ~ 0 -90
+
+execute as aec389bc-e396-41ac-8bef-85ebcf593123 at @s run tp @s ~ ~ ~ 180 0
+execute as cc96b0f1-bdd5-498c-9e6d-64daba58daa8 at @s run tp @s ~ ~ ~ -90 0
+execute as 4ca433fe-64bf-404d-bc76-e09f9f719902 at @s run tp @s ~ ~ ~ -45 0
+execute as d364a92f-4534-48b0-bf64-6da74289be62 at @s run tp @s ~ ~ ~ -135 0
+execute as e18bf975-d677-435c-9542-d3b0ec6685c5 at @s run tp @s ~ ~ ~ 0 90
 
 #Spawn area display
 execute store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnRange 2
 scoreboard players add temp temp 1
 execute store result storage spawner_tweaker:temp spawner.SpawnVolume float 1.001 run scoreboard players get temp temp
 execute store result storage spawner_tweaker:temp spawner.HalfSpawnVolume float 0.5001 run scoreboard players get temp temp
-execute on passengers run function spawner_tweaker:spawner_tweaking/spawn_area with storage spawner_tweaker:temp spawner
-execute on passengers run data merge entity @s {block_state:{Name:"minecraft:gray_stained_glass"}}
-$execute if entity @a[distance=..$(RequiredPlayerRange),tag=holding_spawner] on passengers run data merge entity @s {block_state:{Name:"minecraft:red_stained_glass"}}
+execute as 4a3f09af-b376-485e-a73a-a4566af88748 run function spawner_tweaker:spawner_tweaking/spawn_area with storage spawner_tweaker:temp spawner
+execute as 4a3f09af-b376-485e-a73a-a4566af88748 run data merge entity @s {block_state:{Name:"minecraft:gray_stained_glass"}}
+$execute if entity @a[distance=..$(RequiredPlayerRange),tag=holding_spawner] as 4a3f09af-b376-485e-a73a-a4566af88748 run data merge entity @s {block_state:{Name:"minecraft:red_stained_glass"}}
 
 #Radius display
 execute store result score temp temp run data get storage spawner_tweaker:temp spawner.RequiredPlayerRange 1200
 execute store result storage spawner_tweaker:temp temp.scale float 0.0103 run scoreboard players get temp temp
-execute store result storage spawner_tweaker:temp temp.x float 0.00019 run scoreboard players get temp temp
-execute store result storage spawner_tweaker:temp temp.y float 0.00161 run scoreboard players get temp temp
+execute store result storage spawner_tweaker:temp temp.x float 0.00018 run scoreboard players get temp temp
+execute store result storage spawner_tweaker:temp temp.y float 0.00135 run scoreboard players get temp temp
 execute as @e[distance=..5,tag=st_radius_x] run function spawner_tweaker:spawner_tweaking/radius with storage spawner_tweaker:temp temp
 execute as @e[distance=..5,tag=st_radius_x2] run function spawner_tweaker:spawner_tweaking/radius_under with storage spawner_tweaker:temp temp
 execute as @e[distance=..5,tag=st_radius_y] run function spawner_tweaker:spawner_tweaking/radius_v with storage spawner_tweaker:temp temp
