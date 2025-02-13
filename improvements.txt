@@ -8,3 +8,5 @@ Improvements from the previous version:
 -There is now an unselect sfx
 -slightly improved display precision
 -Most displays are now interpolated
+-Added a trigger to enable/disable tweaker
+-Tweaker will show this trigger to anyone that enters creative mode

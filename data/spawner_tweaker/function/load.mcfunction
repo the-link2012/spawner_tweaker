@@ -8,9 +8,11 @@ scoreboard objectives add temp dummy
 scoreboard objectives add spawner_tweaker dummy
 scoreboard objectives add spawner_tweaker_slot dummy
 scoreboard objectives add spawner_tweaker_slot_prev dummy
-scoreboard objectives add prime_spawners trigger
 scoreboard objectives add spawner_tweaker_id dummy
 scoreboard objectives add spawner_tweaker_setting dummy
+scoreboard objectives add prime_spawners trigger
+scoreboard objectives add disable_spawner_tweaker trigger
+scoreboard objectives add give_all_spawners trigger
 
 #Scores
 execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $efficient_data spawner_tweaker 1
