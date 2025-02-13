@@ -1,0 +1,10 @@
+Improvements from the previous version:
+
+-Multiple players may now use the system at once (previously, only 1 player could tweak at a time)
+-All systems now detects holding down the sneak key rather than if the player is crouched
+-You will no longer select or reselect spawners when crouching
+-Fixed bug where swapping held spawners would re-select the previous spawner
+-Swapping held spawners while looking at a spawner keeps it as selected now
+-There is now an unselect sfx
+-slightly improved display precision
+-Most displays are now interpolated

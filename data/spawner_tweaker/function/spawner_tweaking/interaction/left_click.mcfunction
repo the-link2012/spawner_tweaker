@@ -1,61 +1,54 @@
-#Happens when you left click
+#Happens when you left click to modify spawner properties
 
-#Detect sneaking
-scoreboard players set sneak temp 0
-execute if entity @a[tag=holding_spawner,predicate=spawner_tweaker:sneaking] run scoreboard players set sneak temp 1
+#Bells and wistles
+execute as @a[tag=st_holding_ticking] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
 
-##Output
+#Most regular modifications
+execute if score setting temp matches 1 store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnCount
+execute if score setting temp matches 1 store result block ~ ~ ~ SpawnCount short 1 run scoreboard players remove temp temp 1
 
-#Incrimenting settings
-execute if score sneak temp matches 1.. run scoreboard players remove setting spawner_tweaker 1
-execute if score sneak temp matches 1.. if score setting spawner_tweaker matches ..0 run scoreboard players set setting spawner_tweaker 7
-execute if score sneak temp matches 1.. as @a[tag=holding_spawner] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0.7
+execute if score setting temp matches 2 store result score temp temp run data get storage spawner_tweaker:temp spawner.MaxNearbyEntities
+execute if score setting temp matches 2 store result block ~ ~ ~ MaxNearbyEntities short 1 run scoreboard players remove temp temp 1
 
-#Regular modifications
-execute unless score sneak temp matches 1.. as @a[tag=holding_spawner] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
+execute if score setting temp matches 3 store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnRange
+execute if score setting temp matches 3 store result block ~ ~ ~ SpawnRange short 1 run scoreboard players remove temp temp 1
 
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 1 store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnCount
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 1 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnCount short 1 run scoreboard players remove temp temp 1
+execute if score setting temp matches 4 store result score temp temp run data get storage spawner_tweaker:temp spawner.RequiredPlayerRange
+execute if score setting temp matches 4 store result block ~ ~ ~ RequiredPlayerRange short 1 run scoreboard players remove temp temp 1
 
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 2 store result score temp temp run data get storage spawner_tweaker:temp spawner.MaxNearbyEntities
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 2 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ MaxNearbyEntities short 1 run scoreboard players remove temp temp 1
+#Delay Logic
+execute if score setting temp matches 5 store result score temp temp run data get storage spawner_tweaker:temp spawner.MinSpawnDelay
+execute if score setting temp matches 5 store result block ~ ~ ~ MinSpawnDelay short 1 run scoreboard players remove temp temp 10
+execute if score setting temp matches 5 store result score temp temp run data get storage spawner_tweaker:temp spawner.MaxSpawnDelay
+execute if score setting temp matches 5 store result block ~ ~ ~ MaxSpawnDelay short 1 run scoreboard players remove temp temp 10
 
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 3 store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnRange
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 3 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnRange short 1 run scoreboard players remove temp temp 1
+#Light logic (block)
+execute if score setting temp matches 6 store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1]
+execute if score setting temp matches 6 store result block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players remove temp temp 1
+execute if score setting temp matches 6 store result block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players get temp temp
+execute if score setting temp matches 6 store result block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players get temp temp
+execute if score setting temp matches 6 store result block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players get temp temp
+execute if score setting temp matches 6 store result block ~ ~ ~ SpawnData.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players get temp temp
+execute if score setting temp matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] run data modify block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.block_light_limit set value [I;0,14]
+execute if score setting temp matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] run data modify block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.block_light_limit set value [I;0,14]
+execute if score setting temp matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] run data modify block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.block_light_limit set value [I;0,14]
+execute if score setting temp matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] run data modify block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.block_light_limit set value [I;0,14]
+execute if score setting temp matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] run data modify block ~ ~ ~ SpawnData.custom_spawn_rules.block_light_limit set value [I;0,14]
 
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 4 store result score temp temp run data get storage spawner_tweaker:temp spawner.RequiredPlayerRange
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 4 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ RequiredPlayerRange short 1 run scoreboard players remove temp temp 1
-
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 5 store result score temp temp run data get storage spawner_tweaker:temp spawner.MinSpawnDelay
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 5 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ MinSpawnDelay short 1 run scoreboard players remove temp temp 10
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 5 store result score temp temp run data get storage spawner_tweaker:temp spawner.MaxSpawnDelay
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 5 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ MaxSpawnDelay short 1 run scoreboard players remove temp temp 10
-
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players remove temp temp 1
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players get temp temp
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players get temp temp
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players get temp temp
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnData.custom_spawn_rules.block_light_limit[1] short 1 run scoreboard players get temp temp
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.block_light_limit set value [I;0,14]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.block_light_limit set value [I;0,14]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.block_light_limit set value [I;0,14]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.block_light_limit set value [I;0,14]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 6 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnData.custom_spawn_rules.block_light_limit set value [I;0,14]
-
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players remove temp temp 1
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players get temp temp
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players get temp temp
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players get temp temp
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 at 38e349da-d05c-47c9-85c5-dad3300233dc store result block ~ ~ ~ SpawnData.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players get temp temp
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 if score temp temp matches ..0 at 38e349da-d05c-47c9-85c5-dad3300233dc run data remove block ~ ~ ~ SpawnData.custom_spawn_rules.sky_light_limit
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 if score temp temp matches ..0 at 38e349da-d05c-47c9-85c5-dad3300233dc run data remove block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 if score temp temp matches ..0 at 38e349da-d05c-47c9-85c5-dad3300233dc run data remove block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.sky_light_limit
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 if score temp temp matches ..0 at 38e349da-d05c-47c9-85c5-dad3300233dc run data remove block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.sky_light_limit
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 if score temp temp matches ..0 at 38e349da-d05c-47c9-85c5-dad3300233dc run data remove block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.sky_light_limit
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit set value [I;0,14]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.sky_light_limit set value [I;0,14]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.sky_light_limit set value [I;0,14]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.sky_light_limit set value [I;0,14]
-execute unless score sneak temp matches 1.. if score setting spawner_tweaker matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] at 38e349da-d05c-47c9-85c5-dad3300233dc run data modify block ~ ~ ~ SpawnData.custom_spawn_rules.sky_light_limit set value [I;0,14]
+#Light logic (sky)
+execute if score setting temp matches 7 store result score temp temp run data get storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1]
+execute if score setting temp matches 7 store result block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players remove temp temp 1
+execute if score setting temp matches 7 store result block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players get temp temp
+execute if score setting temp matches 7 store result block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players get temp temp
+execute if score setting temp matches 7 store result block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players get temp temp
+execute if score setting temp matches 7 store result block ~ ~ ~ SpawnData.custom_spawn_rules.sky_light_limit[1] short 1 run scoreboard players get temp temp
+execute if score setting temp matches 7 if score temp temp matches ..0 run data remove block ~ ~ ~ SpawnData.custom_spawn_rules.sky_light_limit
+execute if score setting temp matches 7 if score temp temp matches ..0 run data remove block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit
+execute if score setting temp matches 7 if score temp temp matches ..0 run data remove block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.sky_light_limit
+execute if score setting temp matches 7 if score temp temp matches ..0 run data remove block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.sky_light_limit
+execute if score setting temp matches 7 if score temp temp matches ..0 run data remove block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.sky_light_limit
+execute if score setting temp matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] run data modify block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit set value [I;0,14]
+execute if score setting temp matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] run data modify block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.sky_light_limit set value [I;0,14]
+execute if score setting temp matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] run data modify block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.sky_light_limit set value [I;0,14]
+execute if score setting temp matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] run data modify block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.sky_light_limit set value [I;0,14]
+execute if score setting temp matches 7 unless data storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1] run data modify block ~ ~ ~ SpawnData.custom_spawn_rules.sky_light_limit set value [I;0,14]

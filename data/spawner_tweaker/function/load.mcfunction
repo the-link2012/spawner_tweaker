@@ -1,7 +1,7 @@
 #Runs when the datapack loads, sets up any necessary scoreboards and teams
 
-#Return if this has been loaded
-execute if score setup spawner_tweaker matches 3.. run return 1
+#Debug message
+say Link's Spawner Tweaker loaded
 
 #Scoreboards
 scoreboard objectives add temp dummy
@@ -9,11 +9,14 @@ scoreboard objectives add spawner_tweaker dummy
 scoreboard objectives add spawner_tweaker_slot dummy
 scoreboard objectives add spawner_tweaker_slot_prev dummy
 scoreboard objectives add prime_spawners trigger
+scoreboard objectives add spawner_tweaker_id dummy
+scoreboard objectives add spawner_tweaker_setting dummy
 
 #Scores
+execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $efficient_data spawner_tweaker 1
+execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $range spawner_tweaker -1
+
 scoreboard players set setup spawner_tweaker 3
-scoreboard players set $efficient_data spawner_tweaker 1
-scoreboard players set $range spawner_tweaker -1
 
 #Teams
 team add spawner_tweaker_green {"text":"Green","color":"green","bold":false,"italic":false,"underlined":false}
