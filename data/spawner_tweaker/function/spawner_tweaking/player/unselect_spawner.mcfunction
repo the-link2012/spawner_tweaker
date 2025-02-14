@@ -8,3 +8,4 @@ tag @s remove st_tweaking
 tag @s remove st_unload
 tag @s remove st_holding_spawner
 tag @s remove st_initilize_holding
+scoreboard players set @s spawner_tweaker_delay 0

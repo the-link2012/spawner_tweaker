@@ -1,12 +1,22 @@
-Improvements from the previous version:
+Improvements from the previous version(1.21.1):
 
+Features:
 -Multiple players may now use the system at once (previously, only 1 player could tweak at a time)
+-Added a trigger to enable/disable tweaker
+-Modifying delay is now accelerated when you click repeatedly
+-Precision of delay modifcation and display is now 1s
+-Most displays are now interpolated
+-There is now an unselect sfx
+
+QOL:
 -All systems now detects holding down the sneak key rather than if the player is crouched
 -You will no longer select or reselect spawners when crouching
+-Tweaker will show this trigger to anyone that enters creative mode
+-Improved the title display so that the only units showing are seconds
+-Modifying delay preserves the ratio of the min and max
+
+Bugs:
 -Fixed bug where swapping held spawners would re-select the previous spawner
 -Swapping held spawners while looking at a spawner keeps it as selected now
--There is now an unselect sfx
 -slightly improved display precision
--Most displays are now interpolated
--Added a trigger to enable/disable tweaker
--Tweaker will show this trigger to anyone that enters creative mode
+-Fixed a bug where increasing block light from - then removing it did not reset the spawn rule
