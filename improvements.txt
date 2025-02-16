@@ -1,4 +1,4 @@
-Improvements from the previous version(1.21.1):
+Improvements from the previous version (1.21.1):
 
 Features:
 -Multiple players may now use the system at once (previously, only 1 player could tweak at a time)
@@ -20,3 +20,15 @@ Bugs:
 -Swapping held spawners while looking at a spawner keeps it as selected now
 -slightly improved display precision
 -Fixed a bug where increasing block light from - then removing it did not reset the spawn rule
+
+TODO:
+-Add triggers to readme
+-Raycast hits blocks option
+-redo primer
+-spawner ids
+-spawner lore
+-give spanwer functions
+-auto-register nearby spawners
+
+TODO in future version updates:
+Add new blocks to raycast list

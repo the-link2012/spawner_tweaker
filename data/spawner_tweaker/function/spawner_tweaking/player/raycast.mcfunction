@@ -9,4 +9,5 @@ execute if score n temp matches ..197 if entity @s[tag=st_marking] if score swap
 #Count down and iterate
 scoreboard players remove n temp 1
 execute if score n temp matches 0 run tag @s remove st_marking
-execute if score n temp matches 1.. positioned ^ ^ ^0.5 run function spawner_tweaker:spawner_tweaking/player/raycast
+execute if score n temp matches 1.. if entity @s[tag=st_no_pierce] if block ~ ~ ~ #spawner_tweaker:raycastable positioned ^ ^ ^0.5 run function spawner_tweaker:spawner_tweaking/player/raycast
+execute if score n temp matches 1.. unless entity @s[tag=st_no_pierce] positioned ^ ^ ^0.5 run function spawner_tweaker:spawner_tweaking/player/raycast

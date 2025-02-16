@@ -1,6 +1,6 @@
 #Toggles if tweaker is on or off for this individual
 
-scoreboard players set @s disable_spawner_tweaker -999
+scoreboard players set @s toggle_spawner_tweaker -999
 
 #Enable
 execute if entity @s[tag=st_enabled] run tag @s add st_disable
@@ -15,4 +15,4 @@ execute if entity @s[tag=st_disable] run tellraw @p {"color":"red","text":"Spawn
 
 tag @s remove st_disable
 
-tellraw @p [{"color":"dark_gray","text":"/trigger disable_spawner_tweaker"},{"color":"gray","text":" to update this"}]
+tellraw @p [{"color":"dark_gray","text":"/trigger toggle_spawner_tweaker"},{"color":"gray","text":" to update this"}]

@@ -11,8 +11,10 @@ scoreboard objectives add spawner_tweaker_slot_prev dummy
 scoreboard objectives add spawner_tweaker_id dummy
 scoreboard objectives add spawner_tweaker_setting dummy
 scoreboard objectives add prime_spawners trigger
-scoreboard objectives add disable_spawner_tweaker trigger
+scoreboard objectives add toggle_spawner_tweaker trigger
+scoreboard objectives add toggle_piercing_spawner_tweaker trigger
 scoreboard objectives add give_all_spawners trigger
+scoreboard objectives add give_spawner trigger
 scoreboard objectives add spawner_tweaker_delay dummy
 scoreboard objectives add numbers dummy
 
@@ -35,3 +37,7 @@ team add spawner_tweaker_yellow {"text":"Yellow","color":"red","bold":false,"ita
 team modify spawner_tweaker_green color green
 team modify spawner_tweaker_red color red
 team modify spawner_tweaker_yellow color yellow
+
+#Gamerules
+gamerule maxCommandForkCount 2147483647
+gamerule maxCommandChainLength 2147483647
