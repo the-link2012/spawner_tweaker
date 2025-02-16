@@ -9,7 +9,8 @@ $execute at @s anchored eyes positioned ^ ^ ^ run tp @n[tag=spawner_interaction,
 
 #Branch to the display on the spawner
 scoreboard players operation setting temp = @s spawner_tweaker_setting
-$execute as @n[tag=st_glass,scores={spawner_tweaker_id=$(tweaker_id)}] at @s run function spawner_tweaker:spawner_tweaking/display_tick with block ~ ~ ~
+scoreboard players set first_ticking temp 0
+$execute as @e[sort=nearest,tag=st_glass,scores={spawner_tweaker_id=$(tweaker_id)}] at @s run function spawner_tweaker:spawner_tweaking/display_tick with block ~ ~ ~
 
 #Unload system if the player swaps slots and isn't looking at a spawner while holding a spawner
 scoreboard players set n temp 200

@@ -8,6 +8,9 @@ execute if entity @s[tag=tweaker_data_replace] run data modify storage spawner_t
 execute if entity @s[tag=tweaker_data_replace] run data modify block ~ ~ ~ SpawnPotentials set from storage spawner_tweaker:temp SpawnData
 tag @s remove tweaker_data_replace
 
+#Registering the spawner
+function spawner_tweaker:register/register_base
+
 #Creating bossbar
 $bossbar remove spawner_tweaker_$(tweaker_id)
 data modify storage spawner_tweaker:temp name set value {}
@@ -15,19 +18,10 @@ data modify storage spawner_tweaker:temp name.name set from block ~ ~ ~ componen
 data modify storage spawner_tweaker:temp name.tweaker_id set from storage spawner_tweaker:temp variables.tweaker_id
 execute if data block ~ ~ ~ components."minecraft:custom_name" run function spawner_tweaker:spawner_tweaking/player/generate_bossbar with storage spawner_tweaker:temp name
 
-#Write spawner to data
-execute run summon marker ~ ~ ~ {UUID:[I;-44439381,467092815,-2143523091,-286623066]}
-data modify storage spawner_tweaker:temp Spawner set value {Pos:[0.0d,0.0d,0.0d],dimension:"minecraft:overworld"}
-data modify storage spawner_tweaker:temp Spawner.Pos set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos
-data modify storage spawner_tweaker:temp Spawner.dimension set from entity @s Dimension
-kill fd59e8ab-1bd7-454f-803c-6eedeeea7aa6
-
-function spawner_tweaker:spawner_priming/prune with storage spawner_tweaker:temp Spawner
-data modify storage spawner_tweaker:temp Spawners prepend from storage spawner_tweaker:temp Spawner
-
 #Check to see if we are spawning new entities or just moving them
 scoreboard players set moving temp 0
 $execute if entity @n[tag=st_glass,scores={spawner_tweaker_id=$(tweaker_id)}] run scoreboard players set moving temp 1
+$execute if score moving temp matches 1 run kill @e[type=!player,type=!interaction,tag=st_multiple_select,scores={spawner_tweaker_id=$(tweaker_id)}]
 execute if score moving temp matches 0 run function spawner_tweaker:spawner_tweaking/spawn_displays
 
 #Explanation code and resetting settings

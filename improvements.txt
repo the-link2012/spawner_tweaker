@@ -3,6 +3,7 @@ Improvements from the previous version (1.21.1):
 Features:
 -Multiple players may now use the system at once (previously, only 1 player could tweak at a time)
 -Added a trigger to enable/disable tweaker
+-Added a trigger to enable/disable block piercing for the raycast
 -Modifying delay is now accelerated when you click repeatedly
 -Precision of delay modifcation and display is now 1s
 -Most displays are now interpolated
@@ -22,8 +23,6 @@ Bugs:
 -Fixed a bug where increasing block light from - then removing it did not reset the spawn rule
 
 TODO:
--Add triggers to readme
--Raycast hits blocks option
 -redo primer
 -spawner ids
 -spawner lore

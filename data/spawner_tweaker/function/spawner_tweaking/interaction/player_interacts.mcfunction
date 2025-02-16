@@ -25,8 +25,11 @@ execute if score sneak temp matches 1.. if score rc temp matches 1.. run playsou
 scoreboard players operation setting temp = @s spawner_tweaker_setting
 
 #Finally, branch to actual clicking
+scoreboard players set first_ticking temp 0
 execute if score sneak temp matches 0 if score lc temp matches 1.. as @e[tag=st_glass] if score @s spawner_tweaker_id = tweaker_id spawner_tweaker at @s run function spawner_tweaker:spawner_tweaking/interaction/left_click
 execute if score sneak temp matches 0 if score rc temp matches 1.. as @e[tag=st_glass] if score @s spawner_tweaker_id = tweaker_id spawner_tweaker at @s run function spawner_tweaker:spawner_tweaking/interaction/right_click
+execute if score sneak temp matches 0 if score lc temp matches 1.. run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
+execute if score sneak temp matches 0 if score rc temp matches 1.. run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 2
 
 #Remove any flags
 tag @s remove st_holding_ticking

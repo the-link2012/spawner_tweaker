@@ -17,6 +17,7 @@ scoreboard objectives add give_all_spawners trigger
 scoreboard objectives add give_spawner trigger
 scoreboard objectives add spawner_tweaker_delay dummy
 scoreboard objectives add numbers dummy
+scoreboard objectives add spawner_tweaker_offset dummy
 
 #Scores
 execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $efficient_data spawner_tweaker 1

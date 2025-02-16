@@ -12,7 +12,7 @@ execute if entity @s[tag=st_tweaking] run function spawner_tweaker:spawner_tweak
 
 #Raycasting, my beloved (finds spawner)
 scoreboard players set n temp 200
-execute at @s[predicate=!spawner_tweaker:shifting] anchored eyes run function spawner_tweaker:spawner_tweaking/player/raycast
+execute at @s anchored eyes run function spawner_tweaker:spawner_tweaking/player/raycast
 execute if score n temp matches 0 run scoreboard players set swap_spawner spawner_tweaker 0
 
 #Unmark procedure
