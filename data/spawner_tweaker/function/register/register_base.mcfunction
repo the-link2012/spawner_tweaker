@@ -37,7 +37,7 @@ execute if score n temp matches 1.. run function spawner_tweaker:register/compar
 execute if score not_new temp matches 0 run scoreboard players set register_new temp 0
 
 #If a spawner here exists, and this is a new id, ask if it ought to be registered
-execute if score exists temp matches 1 if score not_new temp matches 1 run say prompt BSE
+execute if score exists temp matches 1 if score not_new temp matches 1 run tellraw @s[tag=!st_searching] "Prompt BSE"
 
 #Automatically register this as a new id if it isn't where a previous spawner was
 execute if score exists temp matches 0 store result storage spawner_tweaker:temp Spawner.id int 1 run scoreboard players get id temp

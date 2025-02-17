@@ -1,8 +1,8 @@
 This datapack currently works from 1.21.2-1.21.4. For legacy versions, view branches on the repository.<br>
 ## How To Use
-Look at a spawner with a spawner in your hand to open its settings & info. Right or left click to modify values, shift right or left click to scroll through the menu. 
-t
-Holding down shift allows placing spawners without pulling up the tweaking menu. Looking at a new spawner while tweaking for a full second will switch the selection. Selecting another spawner while holding sift will allow you to select mutltiple spawners to edit at once. 
+Look at a spawner with a spawner in your hand to open its settings & info. Right or left click to modify values, shift right or left click to scroll through the menu. <br>
+
+Holding down shift allows placing spawners without pulling up the tweaking menu. Looking at a new spawner while tweaking for a full second will switch the selection. Selecting another spawner while holding sift will allow you to select mutltiple spawners to edit at once. <br>
 
 Any spawner you interact with will be registered. You can prime all registered spawners using `/trigger prime_spawners set <ticks>` This works accross dimensions.
 
