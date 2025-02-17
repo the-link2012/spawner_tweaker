@@ -40,8 +40,8 @@ execute if score not_new temp matches 0 run scoreboard players set register_new 
 execute if score exists temp matches 1 if score not_new temp matches 1 run tellraw @s[tag=!st_searching] "Prompt BSE"
 
 #Automatically register this as a new id if it isn't where a previous spawner was
-execute if score exists temp matches 0 store result storage spawner_tweaker:temp Spawner.id int 1 run scoreboard players get id temp
 execute if score exists temp matches 0 if score register_new temp matches 1 run function spawner_tweaker:register/register_new_id with block ~ ~ ~
+execute store result storage spawner_tweaker:temp Spawner.id int 1 run scoreboard players get id temp
 execute if score exists temp matches 0 run function spawner_tweaker:spawner_priming/prune with storage spawner_tweaker:temp Spawner
 execute if score exists temp matches 0 run data modify storage spawner_tweaker:temp Spawners prepend from storage spawner_tweaker:temp Spawner
 execute if score exists temp matches 0 if score not_new temp matches 0 run particle minecraft:trial_spawner_detection ~ ~ ~ 0.7 0.7 0.7 0 20 force @s
@@ -49,6 +49,5 @@ execute if score exists temp matches 0 if score not_new temp matches 0 run parti
 execute if score exists temp matches 0 if score not_new temp matches 0 run playsound minecraft:block.trial_spawner.detect_player master @s ~ ~ ~ 1 0.8
 
 #If a spawner is here, but it just needs an updated id, do that.
-execute if score exists temp matches 1 if score not_new temp matches 0 store result storage spawner_tweaker:temp Spawner.id int 1 run scoreboard players get id temp
 execute if score exists temp matches 1 if score not_new temp matches 0 run function spawner_tweaker:spawner_priming/prune with storage spawner_tweaker:temp Spawner
 execute if score exists temp matches 1 if score not_new temp matches 0 run data modify storage spawner_tweaker:temp Spawners prepend from storage spawner_tweaker:temp Spawner
