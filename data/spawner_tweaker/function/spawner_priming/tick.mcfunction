@@ -1,10 +1,7 @@
 #Do one step of the spawner priming process
 
-#Initiate if needed
-execute if score spawners_primed spawner_tweaker matches ..-1 run function spawner_tweaker:spawner_priming/initiate
-
 #Main process
-execute if score spawners_primed spawner_tweaker matches 0.. run function spawner_tweaker:spawner_priming/prime_spawner with storage spawner_tweaker:temp Priming[0]
+execute if score spawners_primed st_priming matches 0.. run function spawner_tweaker:spawner_priming/prime_spawner with storage spawner_tweaker:temp Priming[0]
 data modify storage spawner_tweaker:temp Priming[0].x set from storage spawner_tweaker:temp Priming[0].Pos[0]
 data modify storage spawner_tweaker:temp Priming[0].y set from storage spawner_tweaker:temp Priming[0].Pos[1]
 data modify storage spawner_tweaker:temp Priming[0].z set from storage spawner_tweaker:temp Priming[0].Pos[2]
@@ -18,8 +15,9 @@ scoreboard players add @e[tag=st_primer,type=item_display] prime_spawners 1
 kill @e[tag=st_primer,type=item_display,scores={prime_spawners=60..}]
 
 #Inciment counter
-scoreboard players add spawners_primed spawner_tweaker 1
-title @a actionbar [{"text":"Spawners primed ","color":"gray"},{"score":{"name":"spawners_primed","objective":"spawner_tweaker"},"color":"red"},{"text":"/"},{"score":{"name":"total_spawners","objective":"spawner_tweaker"},"color":"green"}]
+scoreboard players add timer st_priming 1
+scoreboard players add spawners_primed st_priming 1
+title @a actionbar [{"text":"Spawners primed ","color":"gray"},{"score":{"name":"spawners_primed","objective":"st_priming"},"color":"red"},{"text":"/"},{"score":{"name":"total_spawners","objective":"st_priming"},"color":"green"}]
 
-#End if needed
-execute if score spawners_primed spawner_tweaker >= total_spawners spawner_tweaker run function spawner_tweaker:spawner_priming/end
+#End when needed
+execute if score spawners_primed st_priming >= total_spawners st_priming run function spawner_tweaker:spawner_priming/end

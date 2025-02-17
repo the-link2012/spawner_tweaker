@@ -18,8 +18,10 @@ scoreboard objectives add give_spawner trigger
 scoreboard objectives add spawner_tweaker_delay dummy
 scoreboard objectives add numbers dummy
 scoreboard objectives add spawner_tweaker_offset dummy
+scoreboard objectives add st_priming dummy
 
 #Scores
+execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $modification_limit spawner_tweaker 20
 execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $efficient_data spawner_tweaker 1
 execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $range spawner_tweaker -1
 scoreboard players set setup spawner_tweaker 3

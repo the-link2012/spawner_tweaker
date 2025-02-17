@@ -22,7 +22,7 @@ $execute if score remove temp matches 1.. in $(dimension) positioned $(x2) $(y2)
 
 
 #Remove forceloads
-$execute if score force_loaded spawner_tweaker matches 1.. in $(dimension) run forceload remove $(x2) $(z2)
+$execute if score force_loaded st_priming matches 1.. in $(dimension) run forceload remove $(x2) $(z2)
 
 #Remove storage
 data remove storage spawner_tweaker:temp Priming[0]

@@ -1,8 +1,8 @@
 This datapack currently works from 1.21.2-1.21.4. For legacy versions, view branches on the repository.<br>
 ## How To Use
 Look at a spawner with a spawner in your hand to open its settings & info. Right or left click to modify values, shift right or left click to scroll through the menu. 
-
-Holding down the sneak key (SHIFT) allows placing spawners without pulling up the tweaking menu. Looking at a new spawner while tweaking for a full second will switch the selection. Selecting another spawner while holding the sneak key will allow you to select mutltiple spawners to edit at once. 
+t
+Holding down shift allows placing spawners without pulling up the tweaking menu. Looking at a new spawner while tweaking for a full second will switch the selection. Selecting another spawner while holding sift will allow you to select mutltiple spawners to edit at once. 
 
 Any spawner you interact with will be registered. You can prime all registered spawners using `/trigger prime_spawners set <ticks>` This works accross dimensions.
 
@@ -11,6 +11,8 @@ Any spawner you interact with will be registered. You can prime all registered s
 Enables/disables spawner tweaker for you (default is on)<br>
 `/trigger toggle_piercing_spawner_tweaker`<br>
 Toggles if spawner tweaker's raycast halts when hitting solid blocks (default is piering)<br>
+`/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
+Default of 20, how many spawners to attempt to modify/load each tick<br>
 `/scoreboard players set $range spawner_tweaker <range>`<br>
 Default of -1, cubical range to prime spawners in, with negative numbers being infinite (ex. 100 would be a 200 sized cube centered on the player)<br>
 `/scoreboard players set $efficient_data spawner_tweaker 1`<br>

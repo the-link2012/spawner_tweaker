@@ -13,6 +13,7 @@ scoreboard players enable @s give_spawner
 scoreboard players enable @s give_all_spawners
 
 #Running triggers
+execute unless score @s prime_spawners matches ..-999 run function spawner_tweaker:spawner_priming/initiate
 execute unless score @s toggle_spawner_tweaker matches -999 run function spawner_tweaker:toggle_tweaking
 execute unless score @s toggle_piercing_spawner_tweaker matches ..0 run function spawner_tweaker:toggle_block_pierce
 

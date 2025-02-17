@@ -2,6 +2,7 @@ Improvements from the previous version (1.21.1):
 
 Features:
 -Multiple players may now use the system at once (previously, only 1 player could tweak at a time)
+-You may now edit multiple spawners at a time if you sneak while selecting new spawners
 -Added a trigger to enable/disable tweaker
 -Added a trigger to enable/disable block piercing for the raycast
 -Modifying delay is now accelerated when you click repeatedly
@@ -15,6 +16,7 @@ QOL:
 -Tweaker will show this trigger to anyone that enters creative mode
 -Improved the title display so that the only units showing are seconds
 -Modifying delay preserves the ratio of the min and max
+-New visual indications when spawners are registered and/or when a new id is assigned
 
 Bugs:
 -Fixed bug where swapping held spawners would re-select the previous spawner
