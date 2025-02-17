@@ -8,7 +8,7 @@ execute if score swap_spawner spawner_tweaker matches 22.. if entity @s[predicat
 execute if score swap_spawner spawner_tweaker matches 22.. if entity @s[predicate=spawner_tweaker:shifting] align xyz positioned ~0.5 ~0.5 ~0.5 run function spawner_tweaker:spawner_tweaking/player/add_spawner with storage spawner_tweaker:temp variables
 
 #If no spawner is selected
-$execute unless entity @n[tag=st_glass,scores={spawner_tweaker_id=$(tweaker_id)}] align xyz positioned ~0.5 ~0.5 ~0.5 run function spawner_tweaker:spawner_tweaking/player/select_spawner with storage spawner_tweaker:temp variables
+$execute unless entity @n[tag=st_glass,scores={spawner_tweaker_id=$(tweaker_id)}] unless predicate spawner_tweaker:shifting align xyz positioned ~0.5 ~0.5 ~0.5 run function spawner_tweaker:spawner_tweaking/player/select_spawner with storage spawner_tweaker:temp variables
 
 #End raycasting
 scoreboard players set n temp -999

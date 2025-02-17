@@ -12,11 +12,11 @@ Enables/disables spawner tweaker for you (default is on)<br>
 `/trigger toggle_piercing_spawner_tweaker`<br>
 Toggles if spawner tweaker's raycast halts when hitting solid blocks (default is piering)<br>
 `/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
-Default of 20, how many spawners to attempt to modify/load each tick<br>
+Default of 20, how many spawners to attempt to modify each tick<br>
 `/scoreboard players set $range spawner_tweaker <range>`<br>
 Default of -1, cubical range to prime spawners in, with negative numbers being infinite (ex. 100 would be a 200 sized cube centered on the player)<br>
 `/scoreboard players set $efficient_data spawner_tweaker 1`<br>
-1 or 0, default 1. Wheather or not to delete unnecessary data when priming spawners.
+1 or 0, default 1. Wheather or not to delete unnecessary data in spawners when priming. Useful for reducing lag when publishing maps.
 
 ### Reuse and Contact
 Feel free to use, modify, and distribute. This datapack is by link2012.<br>

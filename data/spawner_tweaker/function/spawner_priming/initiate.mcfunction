@@ -15,18 +15,29 @@ execute if score delay st_priming matches ..0 run scoreboard players set delay s
 data remove storage spawner_tweaker:temp Priming
 data remove storage spawner_tweaker:temp Checking
 data modify storage spawner_tweaker:temp Checking set from storage spawner_tweaker:temp Spawners
+execute unless score $range spawner_tweaker matches 1.. run data modify storage spawner_tweaker:temp Priming set from storage spawner_tweaker:temp Checking
 
 #Fix this list by removing spawners outside of range
-execute if score $range st_priming matches 1.. store result score x temp run data get entity @s Pos[0]
-execute if score $range st_priming matches 1.. store result score y temp run data get entity @s Pos[1]
-execute if score $range st_priming matches 1.. store result score z temp run data get entity @s Pos[2]
-execute if score $range st_priming matches 1.. run function spawner_tweaker:spawner_priming/range_checker
+execute if score $range spawner_tweaker matches 1.. store result score x temp run data get entity @p[scores={prime_spawners=-998..}] Pos[0]
+execute if score $range spawner_tweaker matches 1.. store result score y temp run data get entity @p[scores={prime_spawners=-998..}] Pos[1]
+execute if score $range spawner_tweaker matches 1.. store result score z temp run data get entity @p[scores={prime_spawners=-998..}] Pos[2]
+execute if score $range spawner_tweaker matches 1.. run function spawner_tweaker:spawner_priming/range_checker
 
 #Get spawner counts
+scoreboard players set spawners_primed st_priming 0
 scoreboard players add total_spawners st_priming 0
-execute unless score $range st_priming matches 1.. run data modify storage spawner_tweaker:temp Priming set from storage spawner_tweaker:temp Checking
 execute store result score total_spawners st_priming if data storage spawner_tweaker:temp Priming[]
 
+#Figuring out which spawners must be foreloaded
+scoreboard players set n temp 0
+data modify storage spawner_tweaker:temp Priming[0].n set value 0
+data modify storage spawner_tweaker:temp Priming[0].next set value 1
+data modify storage spawner_tweaker:temp Priming[0].x set from storage spawner_tweaker:temp Priming[0].Pos[0]
+data modify storage spawner_tweaker:temp Priming[0].y set from storage spawner_tweaker:temp Priming[0].Pos[1]
+data modify storage spawner_tweaker:temp Priming[0].z set from storage spawner_tweaker:temp Priming[0].Pos[2]
+function spawner_tweaker:spawner_priming/load_checker with storage spawner_tweaker:temp Priming[0]
+
 #Flags
+scoreboard players set @s prime_spawners -999
 scoreboard players set timer st_priming 1
 scoreboard players set ongoing_process spawner_tweaker 1
