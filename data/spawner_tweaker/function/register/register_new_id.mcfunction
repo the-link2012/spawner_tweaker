@@ -1,18 +1,13 @@
 #Happens when a spawner needs to be registered under a new id
 scoreboard players set id temp 0
 execute store result score id temp if data storage spawner_tweaker:temp Ids[{}]
-data modify storage spawner_tweaker:temp id set value {id:0,SpawnPotentials:[]}
+data modify storage spawner_tweaker:temp id set from block ~ ~ ~
 execute store result storage spawner_tweaker:temp id.id int 1 run scoreboard players get id temp
-$data modify storage spawner_tweaker:temp id.SpawnPotentials set value $(SpawnPotentials)
-data remove storage spawner_tweaker:temp id.SpawnPotentials[0].data.custom_spawn_rules
-data remove storage spawner_tweaker:temp id.SpawnPotentials[1].data.custom_spawn_rules
-data remove storage spawner_tweaker:temp id.SpawnPotentials[2].data.custom_spawn_rules
-data remove storage spawner_tweaker:temp id.SpawnPotentials[3].data.custom_spawn_rules
-data remove storage spawner_tweaker:temp id.SpawnPotentials[4].data.custom_spawn_rules
-data remove storage spawner_tweaker:temp id.SpawnPotentials[5].data.custom_spawn_rules
-data remove storage spawner_tweaker:temp id.SpawnPotentials[6].data.custom_spawn_rules
-data remove storage spawner_tweaker:temp id.SpawnPotentials[7].data.custom_spawn_rules
-data remove storage spawner_tweaker:temp id.SpawnPotentials[8].data.custom_spawn_rules
+data modify storage spawner_tweaker:temp id.Delay set value 0s
+data remove storage spawner_tweaker:temp id.x
+data remove storage spawner_tweaker:temp id.y
+data remove storage spawner_tweaker:temp id.z
+data remove storage spawner_tweaker:temp id.SpawnData
 data modify storage spawner_tweaker:temp Ids append from storage spawner_tweaker:temp id
 
 #Bells and wistles

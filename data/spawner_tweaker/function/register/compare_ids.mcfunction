@@ -1,8 +1,15 @@
 #Compares a spawner to existing ids to find out if it exists or not.
-data remove storage spawner_tweaker:temp compare_ids[0].id
-
 scoreboard players set not_new temp 0
-execute store success score not_new temp run data modify storage spawner_tweaker:temp compare_ids[0] set from storage spawner_tweaker:temp physical_spawner
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[0].data.custom_spawn_rules
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[1].data.custom_spawn_rules
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[2].data.custom_spawn_rules
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[3].data.custom_spawn_rules
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[4].data.custom_spawn_rules
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[5].data.custom_spawn_rules
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[6].data.custom_spawn_rules
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[7].data.custom_spawn_rules
+data remove storage spawner_tweaker:temp compare_ids[0].SpawnPotentials[8].data.custom_spawn_rules
+execute store success score not_new temp run data modify storage spawner_tweaker:temp compare_ids[0].SpawnPotentials set from storage spawner_tweaker:temp physical_spawner.SpawnPotentials
 
 scoreboard players add id temp 1
 data remove storage spawner_tweaker:temp compare_ids[0]
