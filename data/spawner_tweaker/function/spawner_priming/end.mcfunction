@@ -7,7 +7,7 @@ execute unless score spawners_primed st_priming >= total_spawners st_priming as 
 scoreboard players set timer st_priming 0
 scoreboard players set @a prime_spawners -999
 scoreboard players set spawners_primed st_priming -1
-scoreboard players set ongoing_process spawner_tweaker 0
+scoreboard players set $st_ongoing_process temp 0
 
 #Killing displays
 execute if entity @e[tag=st_primer,type=item_display,limit=1] run schedule function spawner_tweaker:spawner_priming/kill_displays 1t

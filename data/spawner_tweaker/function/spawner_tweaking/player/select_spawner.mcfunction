@@ -31,7 +31,7 @@ tag @s add st_explain
 
 #sound
 execute at @s run playsound minecraft:block.note_block.hat player @s ~ ~ ~ 1 1
-scoreboard players set swap_spawner spawner_tweaker 0
+scoreboard players set swap_spawner temp 0
 
 #Teleports for if this is switching spawners
 $execute if score moving temp matches 1.. run tp @e[type=!player,type=!interaction,scores={spawner_tweaker_id=$(tweaker_id)}] ~ ~ ~

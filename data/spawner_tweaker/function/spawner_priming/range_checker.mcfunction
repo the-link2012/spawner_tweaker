@@ -5,12 +5,12 @@ execute store result score z1 temp run data get storage spawner_tweaker:temp Che
 scoreboard players operation x2 temp = x1 temp
 scoreboard players operation y2 temp = y1 temp
 scoreboard players operation z2 temp = z1 temp
-scoreboard players operation x1 temp -= $range spawner_tweaker
-scoreboard players operation y1 temp -= $range spawner_tweaker
-scoreboard players operation z1 temp -= $range spawner_tweaker
-scoreboard players operation x2 temp += $range spawner_tweaker
-scoreboard players operation y2 temp += $range spawner_tweaker
-scoreboard players operation z2 temp += $range spawner_tweaker
+scoreboard players operation x1 temp -= $prime_range spawner_tweaker
+scoreboard players operation y1 temp -= $prime_range spawner_tweaker
+scoreboard players operation z1 temp -= $prime_range spawner_tweaker
+scoreboard players operation x2 temp += $prime_range spawner_tweaker
+scoreboard players operation y2 temp += $prime_range spawner_tweaker
+scoreboard players operation z2 temp += $prime_range spawner_tweaker
 
 #Compare to player and write if success
 scoreboard players set pass temp 0
