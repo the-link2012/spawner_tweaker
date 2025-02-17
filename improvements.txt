@@ -35,6 +35,7 @@ TODO:
 -spawner lore
 -give spanwer functions
 -auto-register nearby spawners
+-Remove id
 
 TODO in future version updates:
 Add new blocks to raycast list
