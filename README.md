@@ -6,7 +6,9 @@ Holding down shift allows placing spawners without pulling up the tweaking menu.
 
 ### Bulk Editing
 Any spawner you interact with will be registered in storage and assigned an id. Spawner ids are linked to their spawnpotentials, so multiple spawners can share the same id.<br>
+
 You can prime all registered spawners using `/trigger prime_spawners set <ticks>` This works accross dimensions.<br>
+
 If you want to bulk edit spawners of a specific id, modify that spawner in your world (by placing a new one in the same spot WITHOUT an existing id, or by using /data modify), then select it with spawner tweaker. You will be prompted on how you would like to bulk edit spawners that share the same id.<br>
 
 ### Options
