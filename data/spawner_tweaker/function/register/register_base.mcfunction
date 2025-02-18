@@ -47,6 +47,7 @@ execute if score exists temp matches 0 run data modify storage spawner_tweaker:t
 execute if score exists temp matches 0 if score not_new temp matches 0 run particle minecraft:trial_spawner_detection ~ ~ ~ 0.7 0.7 0.7 0 20 force @s
 execute if score exists temp matches 0 if score not_new temp matches 0 run particle minecraft:trial_spawner_detection ~ ~ ~ 0.7 0.7 0.7 0 20 normal @s
 execute if score exists temp matches 0 if score not_new temp matches 0 run playsound minecraft:block.trial_spawner.detect_player master @s ~ ~ ~ 1 0.8
+execute if score exists temp matches 0 run scoreboard players set spawner_found temp 1
 
 #If a spawner is here, but it just needs an updated id, do that.
 execute if score exists temp matches 1 if score not_new temp matches 0 run function spawner_tweaker:spawner_priming/prune with storage spawner_tweaker:temp Spawner

@@ -18,6 +18,8 @@ Enables/disables spawner tweaker for you (default is on)<br>
 Toggles if spawner tweaker's raycast halts when hitting solid blocks (default is piering)<br>
 `/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
 Default of 20, how many spawners to attempt to modify each tick<br>
+`/scoreboard players set $search_range spawner_tweaker <range>`<br>
+Default of 6, max of 15, cubical range to passively register spawners in, with negative numbers being none (ex. 10 would search a 20x20x20 sized cube centered on where creative mode players are looking at)<br>
 `/scoreboard players set $prime_range spawner_tweaker <range>`<br>
 Default of -1, cubical range to prime spawners in, with negative numbers being infinite (ex. 100 would be a 200 sized cube centered on the player)<br>
 `/scoreboard players set $efficient_data spawner_tweaker 1`<br>
