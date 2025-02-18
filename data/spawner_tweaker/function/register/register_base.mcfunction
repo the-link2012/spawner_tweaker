@@ -52,3 +52,9 @@ execute if score exists temp matches 0 run scoreboard players set spawner_found 
 #If a spawner is here, but it just needs an updated id, do that.
 execute if score exists temp matches 1 if score not_new temp matches 0 run function spawner_tweaker:spawner_priming/prune with storage spawner_tweaker:temp Spawner
 execute if score exists temp matches 1 if score not_new temp matches 0 run data modify storage spawner_tweaker:temp Spawners prepend from storage spawner_tweaker:temp Spawner
+
+#Make the display
+execute positioned ~ ~0.6 ~ if block ~ ~ ~ #spawner_tweaker:raycastable unless entity @e[distance=..0.1,tag=st_id_display] run summon text_display ~ ~ ~ {billboard:"center",start_interpolation:0,interpolation_duration:10,alignment:"center",Tags:["st_id_display"],brightness:{sky:15,block:15},text:'[{"color":"aqua","text":"ID "},{"score":{"name":"id","objective":"temp"}}]',background:1677721600,transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],see_through:1b}
+execute positioned ~ ~0.6 ~ unless block ~ ~ ~ #spawner_tweaker:raycastable positioned ~ ~-0.75 ~ unless entity @e[distance=..0.1,tag=st_id_display] run summon text_display ~ ~ ~ {billboard:"center",start_interpolation:0,interpolation_duration:10,alignment:"center",Tags:["st_id_display","in_spawner"],brightness:{sky:15,block:15},text:'[{"color":"aqua","text":"ID "},{"score":{"name":"id","objective":"temp"}}]',background:1677721600,transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],see_through:1b}
+
+schedule function spawner_tweaker:register/kill_id_displays 2t
