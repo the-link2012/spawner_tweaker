@@ -5,6 +5,8 @@ Features:
 -You may now edit multiple spawners at a time if you sneak while selecting new spawners
 -Added a trigger to enable/disable tweaker
 -Added a trigger to enable/disable block piercing for the raycast
+-Spawners are now assigned an ID to allow for bulk editing
+-You can remove an id with /trigger delete_spawner_id set <id>
 -Added an automated search feature for registering spawners, along with a corresponding setting
 -Added a setting to control how fast spawners are modified with priming and bulk edits
 -Modifying delay is now accelerated when you click repeatedly
@@ -31,11 +33,9 @@ Bugs:
 -Added multiple failsafes to the spawner priming system, including a timeout system
 
 TODO:
--spawner ids
 -spawner updater - nothing/update id/new id/bulk update
 -spawner lore
 -give spanwer functions
--Add ability to remove ids
 
 TODO in future version updates:
 Add new blocks to raycast list

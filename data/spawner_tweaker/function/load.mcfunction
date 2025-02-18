@@ -15,6 +15,7 @@ scoreboard objectives add toggle_spawner_tweaker trigger
 scoreboard objectives add toggle_piercing_spawner_tweaker trigger
 scoreboard objectives add give_all_spawners trigger
 scoreboard objectives add give_spawner trigger
+scoreboard objectives add delete_spawner_id trigger
 scoreboard objectives add spawner_tweaker_delay dummy
 scoreboard objectives add numbers dummy
 scoreboard objectives add spawner_tweaker_offset dummy

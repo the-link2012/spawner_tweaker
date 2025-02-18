@@ -1,6 +1,7 @@
 #Happens when a spawner needs to be registered under a new id
-scoreboard players set id temp 0
-execute store result score id temp if data storage spawner_tweaker:temp Ids[{}]
+execute store result storage spawner_tweaker:temp variables.id int 1 run scoreboard players set id temp 0
+function spawner_tweaker:register/find_next_id with storage spawner_tweaker:temp variables
+
 data modify storage spawner_tweaker:temp id set from block ~ ~ ~
 execute store result storage spawner_tweaker:temp id.id int 1 run scoreboard players get id temp
 data modify storage spawner_tweaker:temp id.Delay set value 0s
