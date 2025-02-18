@@ -37,8 +37,8 @@ execute if score n temp matches 1.. run function spawner_tweaker:register/compar
 execute if score not_new temp matches 0 run scoreboard players set register_new temp 0
 
 #Force a new register if player clicked the chat prompt
-execute if entity @s[tag=st_new_spawner] run scoreboard players set exists temp 0
-execute if entity @s[tag=st_new_spawner] run scoreboard players set register_new temp 1
+execute if entity @s[tag=st_new_spawner] unless score not_new temp matches 0 run scoreboard players set exists temp 0
+execute if entity @s[tag=st_new_spawner] unless score not_new temp matches 0 run scoreboard players set register_new temp 1
 
 #Automatically register this as a new id if it isn't where a previous spawner was
 execute if score exists temp matches 0 if score register_new temp matches 1 run function spawner_tweaker:register/register_new_id with block ~ ~ ~
