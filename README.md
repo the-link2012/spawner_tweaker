@@ -11,13 +11,15 @@ You can prime all registered spawners using `/trigger prime_spawners set <ticks>
 
 If you want to bulk edit spawners of a specific id, modify that spawner in your world (by placing a new one in the same spot, or by using /data modify), then select it with spawner tweaker. You will be prompted on how you would like to bulk edit spawners that share the same id. Please make sure to place modified spawners on the same block, or else it will be registered as a new id.<br>
 
+**Bulk-editing spawners with multiple SpawnPotentials will always choose a random SpawnPotential for the SpawnData, ignoring weights*<br>
+
 ### Options
 `/trigger toggle_spawner_tweaker`<br>
 Enables/disables spawner tweaker for you (default is on)<br>
 `/trigger toggle_piercing_spawner_tweaker`<br>
 Toggles if spawner tweaker's raycast halts when hitting solid blocks (default is piering)<br>
 `/trigger delete_spawner_id set <id>`<br>
-Removes a spawner's id any any corresponding spawner locations under that id<br>
+Removes a spawner's id and any corresponding spawner locations under that id<br>
 `/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
 Default of 20, how many spawners to attempt to modify each tick with priming/bulk edit<br>
 `/scoreboard players set $search_range spawner_tweaker <range>`<br>
