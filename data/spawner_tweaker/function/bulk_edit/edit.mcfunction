@@ -6,7 +6,7 @@ data modify storage spawner_tweaker:temp spawner set value {}
 data modify storage spawner_tweaker:temp spawner set from block ~ ~ ~
 
 #Editing most attributes
-execute if score $st_ongoing_process temp matches 2..3 run data modify block ~ ~ ~ SpawnData set from storage spawner_tweaker:temp update_to.SpawnPotentials[0].data
+execute if score $st_ongoing_process temp matches 2..3 if score $data_population spawner_tweaker matches 1 run data modify block ~ ~ ~ SpawnData set from storage spawner_tweaker:temp update_to.SpawnPotentials[0].data
 execute if score $st_ongoing_process temp matches 2..3 run data modify block ~ ~ ~ SpawnPotentials set from storage spawner_tweaker:temp update_to.SpawnPotentials
 execute if score $st_ongoing_process temp matches 3 run data modify block ~ ~ ~ RequiredPlayerRange set from storage spawner_tweaker:temp update_to.RequiredPlayerRange
 execute if score $st_ongoing_process temp matches 3 run data modify block ~ ~ ~ MaxNearbyEntities set from storage spawner_tweaker:temp update_to.MaxNearbyEntities
@@ -21,13 +21,14 @@ execute if score $st_ongoing_process temp matches 3 run data modify block ~ ~ ~ 
 scoreboard players set different temp 1
 scoreboard players set count temp 0
 execute store result score count temp if data block ~ ~ ~ SpawnPotentials[]
+execute if score count temp matches 1.. unless score $data_population spawner_tweaker matches 1 run data modify block ~ ~ ~ SpawnData set value {}
 execute if score count temp matches 1 run data modify storage spawner_tweaker:temp same set from block ~ ~ ~ SpawnPotentials[0].data
 execute if score count temp matches 1 store success score different temp run data modify storage spawner_tweaker:temp same set from block ~ ~ ~ SpawnData
-execute if score $efficient_data spawner_tweaker matches 1.. if score count temp matches 1 if score different temp matches 0 run data remove block ~ ~ ~ SpawnPotentials[]
+execute if score $efficient_data spawner_tweaker matches 1.. if score $data_population spawner_tweaker matches 1 if score count temp matches 1 if score different temp matches 0 run data remove block ~ ~ ~ SpawnPotentials[]
 
 #Writing a random spawn potential
 execute store result storage spawner_tweaker:temp variables.count int 1 run scoreboard players get count temp
-execute if score count temp matches 2.. run function spawner_tweaker:bulk_edit/choose_random_potential with storage spawner_tweaker:temp variables
+execute if score count temp matches 2.. if score $data_population spawner_tweaker matches 1 run function spawner_tweaker:bulk_edit/choose_random_potential with storage spawner_tweaker:temp variables
 
 #Writing back the light levels
 execute if score $st_ongoing_process temp matches 2 run data modify block ~ ~ ~ SpawnData.custom_spawn_rules set from storage spawner_tweaker:temp spawner.SpawnData.custom_spawn_rules

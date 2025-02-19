@@ -23,11 +23,12 @@ scoreboard objectives add st_priming dummy
 scoreboard objectives add st_search dummy
 
 #Scores
-execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $search_range spawner_tweaker 6
-execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $modification_limit spawner_tweaker 20
+execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $data_population spawner_tweaker 1
+execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $search_range spawner_tweaker 6
+execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $modification_limit spawner_tweaker 20
 execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $efficient_data spawner_tweaker 1
-execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $prime_range spawner_tweaker -1
-scoreboard players set setup spawner_tweaker 3
+execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $prime_range spawner_tweaker -1
+scoreboard players set setup spawner_tweaker 4
 
 scoreboard players set -1 numbers -1
 scoreboard players set 2 numbers 2

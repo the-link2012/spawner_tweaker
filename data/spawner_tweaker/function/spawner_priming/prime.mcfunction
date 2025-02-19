@@ -8,9 +8,10 @@ execute store result block ~ ~ ~ Delay short 1 run scoreboard players get delay 
 scoreboard players set different temp 1
 scoreboard players set count temp 0
 execute store result score count temp if data block ~ ~ ~ SpawnPotentials[]
+execute if score count temp matches 1.. unless score $data_population spawner_tweaker matches 1 run data modify block ~ ~ ~ SpawnData set value {}
 execute if score count temp matches 1 run data modify storage spawner_tweaker:temp same set from block ~ ~ ~ SpawnPotentials[0].data
 execute if score count temp matches 1 store success score different temp run data modify storage spawner_tweaker:temp same set from block ~ ~ ~ SpawnData
-execute if score efficient_data spawner_tweaker matches 1.. if score count temp matches 1 if score different temp matches 0 run data remove block ~ ~ ~ SpawnPotentials[]
+execute if score efficient_data spawner_tweaker matches 1.. if score $data_population spawner_tweaker matches 1 if score count temp matches 1 if score different temp matches 0 run data remove block ~ ~ ~ SpawnPotentials[]
 
 #Remove Data if the spawner isn't there
 scoreboard players set remove temp 0

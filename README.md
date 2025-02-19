@@ -24,10 +24,18 @@ Removes a spawner's id and any corresponding spawner locations under that id<br>
 Default of 20, how many spawners to attempt to modify each tick with priming/bulk edit<br>
 `/scoreboard players set $search_range spawner_tweaker <range>`<br>
 Default of 6, max of 15, cubical range to passively register spawners in, with negative numbers being none (ex. 10 would search a 20x20x20 sized cube centered on where creative mode players are looking at)<br>
+
+#### Niche Options
 `/scoreboard players set $prime_range spawner_tweaker <range>`<br>
 Default of -1, cubical range to prime spawners in, with negative numbers being infinite (ex. 100 would be a 200 sized cube centered on the player)<br>
+`/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_update`<br>
+Forces an id update for the spawner at that location (only updates SpawnPotentials).<br>
+`/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_update`<br>
+Forces a bulk spawner edit for the spawner at that location (updates all spawner attributes).<br>
 `/scoreboard players set $efficient_data spawner_tweaker 1`<br>
-1 or 0, default 1. Wheather or not to delete unnecessary data in spawners when priming. Useful for reducing lag when publishing maps.
+1 or 0, default 1. Wheather or not to delete unnecessary data in spawners when priming. Useful for reducing lag when publishing maps.<br>
+`/scoreboard players set $data_population spawner_tweaker 1`<br>
+1 or 0, default 1. Wheather or not to populate spawner data when priming/bulk editing (no mob will appear in the spawner until a player gets in range, useful if you use weights or want this effect)<br>
 
 ### Reuse and Contact
 Feel free to use, modify, and distribute. This datapack is by link2012.<br>
