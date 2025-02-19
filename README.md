@@ -29,7 +29,7 @@ Default of 6, max of 15, cubical range to passively register spawners in, with n
 `/scoreboard players set $prime_range spawner_tweaker <range>`<br>
 Default of -1, cubical range to prime spawners in, with negative numbers being infinite (ex. 100 would be a 200 sized cube centered on the player)<br>
 `/scoreboard players set $reselect_ticks spawner_tweaker <ticks>`<br>
-Default of 20, minimum of 1. How many ticks it takes for tweaker to select a new spawner if you look at a different one.<br>
+Default of 20, minimum of 1. How many ticks it takes for tweaker to select a new spawner<br>
 `/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_update`<br>
 Forces an id update for the spawner at that location (only updates SpawnPotentials).<br>
 `/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_update`<br>
