@@ -31,9 +31,9 @@ Default of -1, cubical range to prime spawners in, with negative numbers being i
 `/scoreboard players set $reselect_ticks spawner_tweaker <ticks>`<br>
 Default of 20, minimum of 1. How many ticks it takes for tweaker to select a new spawner<br>
 `/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_update`<br>
-Forces an id update for the spawner at that location (only updates SpawnPotentials).<br>
+Forces an id update for the spawner at that location (updates SpawnPotentials for that id)<br>
 `/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_update`<br>
-Forces a bulk spawner edit for the spawner at that location (updates all spawner attributes).<br>
+Forces a bulk spawner edit for the spawner at that location (updates all spawner attributes for that id)<br>
 `/scoreboard players set $efficient_data spawner_tweaker 1`<br>
 1 or 0, default 1. Wheather or not to delete unnecessary data in spawners when priming. Useful for reducing lag when publishing maps.<br>
 `/scoreboard players set $data_population spawner_tweaker 1`<br>
