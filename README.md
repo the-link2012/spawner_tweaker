@@ -37,7 +37,7 @@ Forces a bulk spawner edit for the spawner at that location (updates all spawner
 `/scoreboard players set $efficient_data spawner_tweaker 1`<br>
 1 or 0, default 1. Wheather or not to delete unnecessary data in spawners when priming. Useful for reducing lag when publishing maps.<br>
 `/scoreboard players set $data_population spawner_tweaker 1`<br>
-1 or 0, default 1. Wheather or not to populate spawner data when priming/bulk editing (no mob will appear in the spawner until a player gets in range, useful if you use weights or want this effect)<br>
+1 or 0, default 1. Wheather or not to populate spawner data when priming/bulk editing; no mob will appear in the spawner until a player gets in range, useful if you use weights or want this effect.<br>
 
 ### Reuse and Contact
 Feel free to use, modify, and distribute. This datapack is by link2012.<br>
