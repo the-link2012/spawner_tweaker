@@ -21,4 +21,4 @@ tag @s remove st_multiple_select
 
 #sound
 execute at @s run playsound minecraft:block.note_block.hat player @s ~ ~ ~ 1 1
-scoreboard players set swap_spawner temp 0
+scoreboard players set @s st_swap 0
