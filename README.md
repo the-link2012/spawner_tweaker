@@ -13,7 +13,7 @@ If you want to bulk edit spawners of a specific id, modify that spawner in your 
 
 **Bulk-editing spawners with multiple SpawnPotentials will always choose a random SpawnPotential for each spawner's SpawnData, ignoring weights*<br>
 
-### Options
+### Main Options
 `/trigger toggle_spawner_tweaker`<br>
 Enables/disables spawner tweaker for you (default is on)<br>
 `/trigger toggle_piercing_spawner_tweaker`<br>
@@ -25,7 +25,7 @@ Default of 20, how many spawners to attempt to modify each tick with priming/bul
 `/scoreboard players set $search_range spawner_tweaker <range>`<br>
 Default of 6, max of 15, cubical range to passively register spawners in, with negative numbers being none (ex. 10 would search a 20x20x20 sized cube centered on where creative mode players are looking at)<br>
 
-#### Niche Options
+### Niche Options
 `/scoreboard players set $prime_range spawner_tweaker <range>`<br>
 Default of -1, cubical range to prime spawners in, with negative numbers being infinite (ex. 100 would be a 200 sized cube centered on the player)<br>
 `/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_update`<br>
