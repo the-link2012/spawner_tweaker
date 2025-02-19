@@ -24,6 +24,7 @@ QOL:
 -Modifying delay preserves the ratio of the min and max
 -New visual indications when spawners are registered and/or when a new id is assigned
 -New visual indicators for multi-selecting spawners
+-Bossbars now always show for spawners and contain spawner counts
 
 Bugs:
 -Fixed bug where swapping held spawners would re-select the previous spawner
@@ -34,7 +35,6 @@ Bugs:
 -Added multiple failsafes to the spawner priming system, including a timeout system
 
 TODO:
--spawner updater - nothing/update id/new id/bulk update
 -spawner lore
 -give spanwer functions
 

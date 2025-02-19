@@ -20,6 +20,7 @@ execute unless score @s delete_spawner_id matches ..-1 store result storage spaw
 execute unless score @s delete_spawner_id matches ..-1 run function spawner_tweaker:register/remove_id with storage spawner_tweaker:temp variables
 execute unless score @s prime_spawners matches ..-999 run function spawner_tweaker:spawner_priming/initiate
 execute unless score @s toggle_spawner_tweaker matches -999 run function spawner_tweaker:toggle_tweaking
+execute unless score @s give_spawner matches ..-999 run function spawner_tweaker:give_spawners/trigger_give
 execute unless score @s toggle_piercing_spawner_tweaker matches ..0 run function spawner_tweaker:toggle_block_pierce
 
 #Seeing if this player is holding a spwner and should be ticking
