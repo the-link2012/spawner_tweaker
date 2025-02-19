@@ -18,6 +18,10 @@ If you want to bulk edit spawners of a specific id, modify that spawner in your 
 Enables/disables spawner tweaker for you (default is on)<br>
 `/trigger toggle_piercing_spawner_tweaker`<br>
 Toggles if spawner tweaker's raycast halts when hitting solid blocks (default is piering)<br>
+`/trigger give_spawner set <id>`<br>
+Gives you a placable spawner<br>
+`/trigger give_all_spawners`<br>
+Generates barrels beneath you containing a spawner for each registered spawner id<br>
 `/trigger delete_spawner_id set <id>`<br>
 Removes a spawner's id and any corresponding spawner locations under that id<br>
 `/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>

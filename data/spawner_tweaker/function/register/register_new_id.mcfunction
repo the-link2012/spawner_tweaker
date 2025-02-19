@@ -25,6 +25,11 @@ execute if score name temp matches 2 run data modify storage spawner_tweaker:tem
 #Write new id to ids storage
 data modify storage spawner_tweaker:temp Ids append from storage spawner_tweaker:temp id
 
+#Giving spawner
+data modify storage spawner_tweaker:temp give set value {}
+data modify storage spawner_tweaker:temp give.id set from storage spawner_tweaker:temp id.id
+execute at @s run function spawner_tweaker:give_spawners/read_id with storage spawner_tweaker:temp give
+
 #Bells and wistles
 playsound minecraft:block.trial_spawner.spawn_mob master @s ~ ~ ~ 1 0.8
 playsound item.firecharge.use master @s ~ ~ ~ 0.8 0.5

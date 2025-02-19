@@ -11,7 +11,7 @@ tag @s remove tweaker_data_replace
 #Registering the spawner
 function spawner_tweaker:register/register_base
 
-#Creating bossbar
+#Creating bossbar. This is... a lot more work than it should be.
 $bossbar remove spawner_tweaker_$(tweaker_id)
 data modify storage spawner_tweaker:temp name set value {}
 data modify storage spawner_tweaker:temp name.name set string block ~ ~ ~ SpawnPotentials[0].data.entity.id 10
@@ -20,9 +20,13 @@ data modify storage spawner_tweaker:temp name.name set string block ~ ~ ~ compon
 execute store result storage spawner_tweaker:temp name.id int 1 run scoreboard players get id temp
 function spawner_tweaker:spawner_tweaking/player/count_spawners with storage spawner_tweaker:temp name
 data modify storage spawner_tweaker:temp name.tweaker_id set from storage spawner_tweaker:temp variables.tweaker_id
+scoreboard players set id_in_name temp 0
+execute if data block ~ ~ ~ components."minecraft:custom_data".spawner_tweaker_spawner run scoreboard players set id_in_name temp 1
 scoreboard players set displayed_name temp 0
-execute if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/generate_bossbar with storage spawner_tweaker:temp name
-execute if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/generate_bossbar_2 with storage spawner_tweaker:temp name
+execute if score id_in_name temp matches 1 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/generate_bossbar_3 with storage spawner_tweaker:temp name
+execute if score id_in_name temp matches 1 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/generate_bossbar_4 with storage spawner_tweaker:temp name
+execute if score id_in_name temp matches 0 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/generate_bossbar with storage spawner_tweaker:temp name
+execute if score id_in_name temp matches 0 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/generate_bossbar_2 with storage spawner_tweaker:temp name
 
 #Check to see if we are spawning new entities or just moving them
 scoreboard players set moving temp 0
