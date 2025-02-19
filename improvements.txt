@@ -7,6 +7,7 @@ Features:
 -Added a trigger to enable/disable block piercing for the raycast
 -Spawners are now assigned an ID to allow for bulk editing
 -You can remove an id with /trigger delete_spawner_id set <id>
+-You can now bulk edit spawners by modifying a registered spawner then selecting it with tweaker, which will prompt you how you would like to bulk edit
 -Added an automated search feature for registering spawners, along with a corresponding setting
 -Added a setting to control how fast spawners are modified with priming and bulk edits
 -Modifying delay is now accelerated when you click repeatedly

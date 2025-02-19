@@ -23,7 +23,7 @@ execute unless score @s toggle_spawner_tweaker matches -999 run function spawner
 execute unless score @s toggle_piercing_spawner_tweaker matches ..0 run function spawner_tweaker:toggle_block_pierce
 
 #Seeing if this player is holding a spwner and should be ticking
-tag @s[tag=!st_holding_spawner,predicate=!spawner_tweaker:shifting,tag=!st_disabled,nbt={SelectedItem:{id:"minecraft:spawner"}}] add st_holding_spawner
+execute unless score timer st_priming matches 1.. unless score bse_timer st_priming matches 1.. run tag @s[tag=!st_holding_spawner,predicate=!spawner_tweaker:shifting,tag=!st_disabled,nbt={SelectedItem:{id:"minecraft:spawner"}}] add st_holding_spawner
 
 #Passive search for spawners
 scoreboard players add @s st_search 1

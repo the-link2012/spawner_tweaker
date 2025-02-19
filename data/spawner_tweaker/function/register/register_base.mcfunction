@@ -60,6 +60,7 @@ execute if score exists temp matches 1 if score not_new temp matches 0 run data 
 
 #Make the display
 function spawner_tweaker:register/get_id with storage spawner_tweaker:temp Spawner
+execute if entity @s[tag=st_holding_ticking] if score exists temp matches 1 if score not_new temp matches 0 align xyz positioned ~0.5 ~0.8 ~0.5 run kill @e[distance=..1,limit=1,sort=nearest,tag=st_id_display]
 execute positioned ~ ~0.6 ~ if block ~ ~ ~ #spawner_tweaker:raycastable unless entity @e[distance=..0.1,tag=st_id_display] run summon text_display ~ ~ ~ {billboard:"center",start_interpolation:0,interpolation_duration:10,alignment:"center",Tags:["st_id_display"],brightness:{sky:15,block:15},text:'[{"color":"aqua","text":"ID "},{"score":{"name":"id","objective":"temp"}}]',background:1677721600,transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],see_through:1b}
 execute positioned ~ ~0.6 ~ unless block ~ ~ ~ #spawner_tweaker:raycastable positioned ~ ~-0.75 ~ unless entity @e[distance=..0.1,tag=st_id_display] run summon text_display ~ ~ ~ {billboard:"center",start_interpolation:0,interpolation_duration:10,alignment:"center",Tags:["st_id_display","in_spawner"],brightness:{sky:15,block:15},text:'[{"color":"aqua","text":"ID "},{"score":{"name":"id","objective":"temp"}}]',background:1677721600,transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],see_through:1b}
 

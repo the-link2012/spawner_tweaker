@@ -16,6 +16,8 @@ execute at @s anchored eyes run function spawner_tweaker:spawner_tweaking/player
 execute if score n temp matches 0 run scoreboard players set swap_spawner temp 0
 
 #Unmark procedure
+execute if score timer st_priming matches 1.. run tag @s add st_unload
+execute if score bse_timer st_priming matches 1.. run tag @s add st_unload
 execute unless entity @s[gamemode=!adventure,gamemode=!survival,nbt={SelectedItem:{id:"minecraft:spawner"}}] run tag @s add st_unload
 execute if entity @s[tag=st_unload] run function spawner_tweaker:spawner_tweaking/player/unselect_spawner with storage spawner_tweaker:temp variables
 

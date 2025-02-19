@@ -12,12 +12,13 @@ scoreboard players operation x2 temp += $prime_range spawner_tweaker
 scoreboard players operation y2 temp += $prime_range spawner_tweaker
 scoreboard players operation z2 temp += $prime_range spawner_tweaker
 
-#Compare to player and write if success
+#Compare to player's position and write if success
 scoreboard players set pass temp 0
 execute if score x temp >= x1 temp if score x temp <= x2 temp run scoreboard players add pass temp 1
 execute if score y temp >= y1 temp if score y temp <= y2 temp run scoreboard players add pass temp 1
 execute if score z temp >= z1 temp if score z temp <= z2 temp run scoreboard players add pass temp 1
-execute if score pass temp matches 3.. run data modify storage spawner_tweaker:temp Priming append from storage spawner_tweaker:temp Checking[0]
+execute if score pass temp matches 3.. unless score $st_ongoing_process temp matches 2.. run data modify storage spawner_tweaker:temp Priming append from storage spawner_tweaker:temp Checking[0]
+execute if score pass temp matches 3.. if score $st_ongoing_process temp matches 2.. run data modify storage spawner_tweaker:temp BSE append from storage spawner_tweaker:temp Checking[0]
 
 #Remove and repeat
 data remove storage spawner_tweaker:temp Checking[0]
