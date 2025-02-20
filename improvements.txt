@@ -1,4 +1,4 @@
-Improvements from the previous version (1.21.1):
+Improvements from the previous version (Tweaker 1.0):
 
 Features:
 -Multiple players may now use the system at once (previously, only 1 player could tweak at a time)
@@ -19,7 +19,7 @@ Features:
 -Added a trigger to highlight loaded spawners for a time
 
 QOL:
--All systems now detects holding down the sneak key rather than if the player is crouched
+-All systems now detect holding down the sneak key rather than if the player is crouched
 -You will no longer select or reselect spawners when crouching
 -Reworked the priming system to be more reliable
 -Tweaker will show the new toggle trigger to anyone that enters creative mode
@@ -27,14 +27,14 @@ QOL:
 -Modifying delay preserves the ratio of the min and max
 -New visual indications when spawners are registered and/or when a new id is assigned
 -New visual indicators for multi-selecting spawners
--Bossbars now always show for spawners and contain spawner counts
+-Bossbars now always show for spawners and contain the id and spawner counts
+-Spawners with multiple potentials or passengers display details in the bossbar
 -Improved the displays for priming and bulk editing
 
 Bugs:
 -Fixed bug where swapping held spawners would re-select the previous spawner
 -Fixed a bug where placing a spawner while sneaking sometimes selected it
--Swapping held spawners while looking at a spawner keeps it as selected now
--slightly improved display precision
+-Slightly improved display precision
 -Fixed a bug where increasing block light from "-" then removing it did not reset the spawn rule
 -Added multiple failsafes to the spawner priming system, including a timeout system
 -Through great effort, prevented the spawner names from inbeedring

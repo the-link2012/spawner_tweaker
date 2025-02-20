@@ -10,4 +10,4 @@ function spawner_tweaker:give_spawners/read_id with storage spawner_tweaker:temp
 
 #Flags
 tag @s remove st_give_single
-scoreboard players set @s give_spawner -999
+scoreboard players set @s give_spawner -1000
