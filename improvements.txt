@@ -39,8 +39,5 @@ Bugs:
 -Added multiple failsafes to the spawner priming system, including a timeout system
 -Through great effort, prevented the spawner names from inbeedring
 
-TODO:
--jocky and multi spawn potential name support
-
 TODO in future version updates:
 Add new blocks to raycast list
