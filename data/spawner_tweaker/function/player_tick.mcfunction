@@ -14,7 +14,7 @@ execute store result score @s[tag=!st_init_2] st_search run random value 1..20
 scoreboard players set @s[tag=!st_init_2] prime_spawners -999
 scoreboard players set @s[tag=!st_init_2] give_spawner -1000
 scoreboard players set @s[tag=!st_init_2] delete_spawner_id -1
-tag @s[tag=!st_init_2] add st_init_2_2
+tag @s[tag=!st_init_2] add st_init_2
 
 #Running triggers
 execute if score @s delete_spawner_id matches 0.. store result storage spawner_tweaker:temp variables.id int 1 run scoreboard players get @s delete_spawner_id
