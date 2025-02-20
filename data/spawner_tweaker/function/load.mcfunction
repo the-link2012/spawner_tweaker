@@ -39,6 +39,7 @@ scoreboard players set 5 numbers 5
 scoreboard players set 10 numbers 10
 scoreboard players set 20 numbers 20
 scoreboard players set 100 numbers 100
+scoreboard players set 1000 numbers 1000
 
 #Teams
 team add spawner_tweaker_gray {"text":"Gray","color":"gray","bold":false,"italic":false,"underlined":false}
