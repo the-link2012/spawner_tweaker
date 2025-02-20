@@ -25,6 +25,7 @@ data modify storage spawner_tweaker:temp give.Size_desc set value ""
 data modify storage spawner_tweaker:temp give.Size set value ""
 data modify storage spawner_tweaker:temp give.Armor_desc set value ""
 data modify storage spawner_tweaker:temp give.Armor set value ""
+data modify storage spawner_tweaker:temp give.Jockey set value ""
 
 #Set up data
 $data modify storage spawner_tweaker:temp give.spawner set from storage spawner_tweaker:temp Ids[{id:$(id)}]
@@ -40,6 +41,7 @@ data modify storage spawner_tweaker:temp give.MinBlockLight set from storage spa
 data modify storage spawner_tweaker:temp give.MaxBlockLight set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1]
 data modify storage spawner_tweaker:temp give.MinSkyLight set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[0]
 data modify storage spawner_tweaker:temp give.MaxSkyLight set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[1]
+execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Passengers[] run data modify storage spawner_tweaker:temp give.Jockey set value " (Jockey)"
 scoreboard players set health temp 0
 execute store result score health temp run data get storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Health 100
 execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Health store result storage spawner_tweaker:temp give.Health double 0.01 run scoreboard players get health temp
@@ -76,6 +78,7 @@ execute if data storage spawner_tweaker:temp give.spawner.components."minecraft:
 execute if score name temp matches 0 run data modify storage spawner_tweaker:temp give.name set string storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.id 10
 execute if score name temp matches 1 run data modify storage spawner_tweaker:temp give.name set string storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.CustomName
 execute if score name temp matches 2 run data modify storage spawner_tweaker:temp give.name set string storage spawner_tweaker:temp give.spawner.components."minecraft:custom_name"
+execute if score name temp matches 0 if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Passengers[] run data modify storage spawner_tweaker:temp give.Jockey set value " Jockey"
 
 #Ouputs
 execute if score name temp matches 0 if data storage spawner_tweaker:temp give.spawner run function spawner_tweaker:give_spawners/give_item_1 with storage spawner_tweaker:temp give
