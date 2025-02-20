@@ -25,7 +25,7 @@ Generates barrels beneath you containing a spawner for each registered spawner i
 `/trigger delete_spawner_id set <id>`<br>
 Removes a spawner's id and any corresponding spawner locations under that id<br>
 `/trigger highlight_spawners set <ticks>`<br>
-Highlights all loaded spawners for a certain number of ticks
+Highlights all loaded spawners for a certain number of ticks<br>
 `/scoreboard players set $search_range spawner_tweaker <range>`<br>
 Default of 6, max of 15, cubical range to passively register spawners in, with negative numbers being none (ex. 10 would search a 20x20x20 sized cube centered on where creative mode players are looking at)<br>
 `/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
