@@ -13,6 +13,7 @@ scoreboard objectives add spawner_tweaker_setting dummy
 scoreboard objectives add prime_spawners trigger
 scoreboard objectives add toggle_spawner_tweaker trigger
 scoreboard objectives add toggle_piercing_spawner_tweaker trigger
+scoreboard objectives add highlight_spawners trigger
 scoreboard objectives add give_all_spawners trigger
 scoreboard objectives add give_spawner trigger
 scoreboard objectives add delete_spawner_id trigger
@@ -40,12 +41,16 @@ scoreboard players set 20 numbers 20
 scoreboard players set 100 numbers 100
 
 #Teams
+team add spawner_tweaker_gray {"text":"Gray","color":"gray","bold":false,"italic":false,"underlined":false}
+team add spawner_tweaker_dark_gray {"text":"Dark Gray","color":"dark_gray","bold":false,"italic":false,"underlined":false}
 team add spawner_tweaker_green {"text":"Green","color":"green","bold":false,"italic":false,"underlined":false}
 team add spawner_tweaker_red {"text":"Red","color":"red","bold":false,"italic":false,"underlined":false}
 team add spawner_tweaker_yellow {"text":"Yellow","color":"red","bold":false,"italic":false,"underlined":false}
 team modify spawner_tweaker_green color green
 team modify spawner_tweaker_red color red
 team modify spawner_tweaker_yellow color yellow
+team modify spawner_tweaker_gray color gray
+team modify spawner_tweaker_dark_gray color dark_gray
 
 #Gamerules
 gamerule maxCommandForkCount 2147483647

@@ -37,6 +37,10 @@ execute if score first_ticking temp matches 1.. if entity @s[tag=st_player_near]
 execute unless score first_ticking temp matches 1.. as @e[distance=..0.1,tag=st_radius] run data merge entity @s {text:'{"text":"⭕","color":"red","italic":false}',text_opacity:100}
 execute unless score first_ticking temp matches 1.. if entity @s[tag=st_player_near] as @e[distance=..0.1,tag=st_radius] run data merge entity @s {text:'{"text":"⭕","color":"dark_green","italic":false}',text_opacity:60}
 
+#Adjust glass marker
+#execute if entity @s[tag=st_player_near] run data merge entity @s {item:{id:"minecraft:green_stained_glass",Count:1b}}
+#execute if entity @s[tag=!st_player_near] run data merge entity @s {item:{id:"minecraft:red_stained_glass",Count:1b}}
+
 #End here if title has already been shown
 execute if score first_ticking temp matches 1.. run return 1
 

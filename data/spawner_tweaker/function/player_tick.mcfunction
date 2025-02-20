@@ -14,6 +14,7 @@ scoreboard players enable @s toggle_piercing_spawner_tweaker
 scoreboard players enable @s give_spawner
 scoreboard players enable @s give_all_spawners
 scoreboard players enable @s delete_spawner_id
+scoreboard players enable @s highlight_spawners
 
 #Running triggers
 execute unless score @s delete_spawner_id matches ..-1 store result storage spawner_tweaker:temp variables.id int 1 run scoreboard players get @s delete_spawner_id
@@ -22,6 +23,7 @@ execute unless score @s prime_spawners matches ..-999 run function spawner_tweak
 execute unless score @s toggle_spawner_tweaker matches -999 run function spawner_tweaker:toggle_tweaking
 execute unless score @s give_spawner matches ..-999 run function spawner_tweaker:give_spawners/trigger_give
 execute unless score @s give_all_spawners matches 0 run function spawner_tweaker:give_spawners/trigger_give_all
+execute if score @s highlight_spawners matches 1.. run function spawner_tweaker:highlight/trigger
 execute unless score @s toggle_piercing_spawner_tweaker matches ..0 run function spawner_tweaker:toggle_block_pierce
 
 #Seeing if this player is holding a spwner and should be ticking

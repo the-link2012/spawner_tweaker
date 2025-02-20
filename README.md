@@ -24,10 +24,12 @@ Gives you a placable spawner<br>
 Generates barrels beneath you containing a spawner for each registered spawner id<br>
 `/trigger delete_spawner_id set <id>`<br>
 Removes a spawner's id and any corresponding spawner locations under that id<br>
-`/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
-Default of 20, how many spawners to attempt to modify each tick with priming/bulk edit<br>
+`/trigger highlight_spawners set <ticks>`<br>
+Highlights all loaded spawners for a certain number of ticks
 `/scoreboard players set $search_range spawner_tweaker <range>`<br>
 Default of 6, max of 15, cubical range to passively register spawners in, with negative numbers being none (ex. 10 would search a 20x20x20 sized cube centered on where creative mode players are looking at)<br>
+`/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
+Default of 20, how many spawners to attempt to modify each tick with priming/bulk edit<br>
 
 ### Niche Options
 `/scoreboard players set $prime_range spawner_tweaker <range>`<br>
