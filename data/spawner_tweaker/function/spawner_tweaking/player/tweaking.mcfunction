@@ -4,8 +4,8 @@
 execute if score @s spawner_tweaker_delay matches 1.. run scoreboard players remove @s spawner_tweaker_delay 1
 
 #Move interactions to eyeline
-$execute at @s anchored eyes positioned ^ ^ ^ run tp @n[tag=spawner_interaction,tag=bottom,scores={spawner_tweaker_id=$(tweaker_id)}] ~ ~-1.5 ~
-$execute at @s anchored eyes positioned ^ ^ ^ run tp @n[tag=spawner_interaction,tag=top,scores={spawner_tweaker_id=$(tweaker_id)}] ~ ~-0.5 ~
+$execute at @s anchored eyes positioned ^ ^ ^ run tp @e[limit=1,sort=nearest,tag=spawner_interaction,tag=bottom,scores={spawner_tweaker_id=$(tweaker_id)}] ~ ~-1.5 ~
+$execute at @s anchored eyes positioned ^ ^ ^ run tp @e[limit=1,sort=nearest,tag=spawner_interaction,tag=top,scores={spawner_tweaker_id=$(tweaker_id)}] ~ ~-0.5 ~
 
 #Branch to the display on the spawner
 scoreboard players operation setting temp = @s spawner_tweaker_setting

@@ -38,7 +38,7 @@ execute if score id_in_name temp matches 0 if score displayed_name temp matches 
 
 #Check to see if we are spawning new entities or just moving them
 scoreboard players set moving temp 0
-$execute if entity @n[tag=st_glass,scores={spawner_tweaker_id=$(tweaker_id)}] run scoreboard players set moving temp 1
+$execute if entity @e[limit=1,sort=nearest,tag=st_glass,scores={spawner_tweaker_id=$(tweaker_id)}] run scoreboard players set moving temp 1
 $execute if score moving temp matches 1 run kill @e[type=!player,type=!interaction,tag=st_multiple_select,scores={spawner_tweaker_id=$(tweaker_id)}]
 execute if score moving temp matches 0 run function spawner_tweaker:spawner_tweaking/spawn_displays
 
