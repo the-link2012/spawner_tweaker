@@ -1,4 +1,5 @@
-This datapack currently works from 1.21.2-1.21.4. For legacy versions and backports, view branches on the repository.<br>
+**This is a backport and may contain bugs that get resolved on main!**<br>
+This datapack currently works from 1.21-1.21.1. For other versions, view branches on the repository.<br>
 ## How To Use
 Look at a spawner with a spawner in your hand to open its settings & info. Right or left click to modify values, shift right or left click to scroll through the menu. <br>
 
