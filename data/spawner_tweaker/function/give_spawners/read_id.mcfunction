@@ -4,8 +4,10 @@
 data modify storage spawner_tweaker:temp give.RequiredPlayerRange set value 16
 data modify storage spawner_tweaker:temp give.MaxNearbyEntities set value 6
 data modify storage spawner_tweaker:temp give.Delay set value 0
-data modify storage spawner_tweaker:temp give.MaxSpawnDelay set value 40
-data modify storage spawner_tweaker:temp give.MinSpawnDelay set value 10
+data modify storage spawner_tweaker:temp give.MaxSpawnDelay_s set value 40
+data modify storage spawner_tweaker:temp give.MinSpawnDelay_s set value 10
+data modify storage spawner_tweaker:temp give.MaxSpawnDelay set value 800
+data modify storage spawner_tweaker:temp give.MinSpawnDelay set value 200
 data modify storage spawner_tweaker:temp give.SpawnCount set value 4
 data modify storage spawner_tweaker:temp give.SpawnRange set value 4
 data modify storage spawner_tweaker:temp give.MinBlockLight set value 0
@@ -33,8 +35,10 @@ data remove storage spawner_tweaker:temp give.spawner.id
 data modify storage spawner_tweaker:temp give.MaxNearbyEntities set from storage spawner_tweaker:temp give.spawner.MaxNearbyEntities
 data modify storage spawner_tweaker:temp give.Delay set from storage spawner_tweaker:temp give.spawner.Delay
 data modify storage spawner_tweaker:temp give.RequiredPlayerRange set from storage spawner_tweaker:temp give.spawner.RequiredPlayerRange
-execute store result storage spawner_tweaker:temp give.MaxSpawnDelay float 0.05 run data get storage spawner_tweaker:temp give.spawner.MaxSpawnDelay
-execute store result storage spawner_tweaker:temp give.MinSpawnDelay float 0.05 run data get storage spawner_tweaker:temp give.spawner.MinSpawnDelay
+execute store result storage spawner_tweaker:temp give.MaxSpawnDelay_s float 0.05 run data get storage spawner_tweaker:temp give.spawner.MaxSpawnDelay
+execute store result storage spawner_tweaker:temp give.MinSpawnDelay_s float 0.05 run data get storage spawner_tweaker:temp give.spawner.MinSpawnDelay
+execute store result storage spawner_tweaker:temp give.MaxSpawnDelay float 1 run data get storage spawner_tweaker:temp give.spawner.MaxSpawnDelay
+execute store result storage spawner_tweaker:temp give.MinSpawnDelay float 1 run data get storage spawner_tweaker:temp give.spawner.MinSpawnDelay
 data modify storage spawner_tweaker:temp give.SpawnCount set from storage spawner_tweaker:temp give.spawner.SpawnCount
 data modify storage spawner_tweaker:temp give.SpawnRange set from storage spawner_tweaker:temp give.spawner.SpawnRange
 data modify storage spawner_tweaker:temp give.MinBlockLight set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[0]

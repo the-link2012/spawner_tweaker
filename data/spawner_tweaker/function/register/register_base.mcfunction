@@ -1,5 +1,8 @@
 #Run this at a position to register the spawner into the id and priming systems
 
+#Write spawn potentials to the spawner if none exist
+execute unless data block ~ ~ ~ SpawnPotentials[0] run function spawner_tweaker:register/write_potentials
+
 #Getting the relevant positioning information
 summon marker ~ ~ ~ {UUID:[I;-44439381,467092815,-2143523091,-286623066]}
 data modify storage spawner_tweaker:temp Spawner set value {Pos:[0.0d,0.0d,0.0d],dimension:"minecraft:overworld"}
