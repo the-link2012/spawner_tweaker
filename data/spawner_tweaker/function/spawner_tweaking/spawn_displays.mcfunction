@@ -1,7 +1,7 @@
 #Spawns the needed displays if they do not exist
 
 #Main rotating glass display
-execute run summon item_display ~ ~ ~ {Tags:["st_display","st_glass","st_uninitialized"],Glowing:1b,width:100f,height:100f,interpolation_duration:5,teleport_duration:5,brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.01f,1.01f,1.01f]},item:{id:"minecraft:glass",Count:1b}}
+execute run summon item_display ~ ~ ~ {Tags:["st_display","st_glass","st_uninitialized"],Glowing:1b,width:100f,height:100f,interpolation_duration:5,teleport_duration:5,brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.01f,1.01f,1.01f]},item:{id:"minecraft:glass",count:1b}}
 team join spawner_tweaker_green @e[limit=1,sort=nearest,distance=..1,tag=st_glass,tag=st_uninitialized]
 
 #Extra display for spawner range
