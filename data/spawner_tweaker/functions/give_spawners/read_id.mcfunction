@@ -52,14 +52,14 @@ execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].dat
 data modify storage spawner_tweaker:temp give.Absorption set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.AbsorptionAmount
 execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.AbsorptionAmount run data modify storage spawner_tweaker:temp give.Absorption_desc set value " ❤ "
 scoreboard players set damage temp 0
-execute store result score damage temp run data get storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.attributes[{id:"minecraft:attack_damage"}].base 100
-execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.attributes[{id:"minecraft:attack_damage"}].base store result storage spawner_tweaker:temp give.Attack double 0.01 run scoreboard players get damage temp
-data modify storage spawner_tweaker:temp give.Speed set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.attributes.[{id:"minecraft:movement_speed"}].base
-execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.attributes.[{id:"minecraft:movement_speed"}] run data modify storage spawner_tweaker:temp give.Speed_desc set value " 🏃 "
-data modify storage spawner_tweaker:temp give.Size set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.attributes.[{id:"minecraft:scale"}].base
-execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.attributes.[{id:"minecraft:scale"}] run data modify storage spawner_tweaker:temp give.Size_desc set value " ✥ "
-data modify storage spawner_tweaker:temp give.Armor set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.attributes.[{id:"minecraft:armor"}].base
-execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.attributes.[{id:"minecraft:armor"}] run data modify storage spawner_tweaker:temp give.Armor_desc set value " ⛨ "
+execute store result score damage temp run data get storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Attributes[{Name:generic.attack_damage}].Base 100
+execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Attributes[{Name:generic.attack_damage}].Base store result storage spawner_tweaker:temp give.Attack double 0.01 run scoreboard players get damage temp
+data modify storage spawner_tweaker:temp give.Speed set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Attributes.[{Name:generic.movement_speed}].Base
+execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Attributes.[{Name:generic.movement_speed}] run data modify storage spawner_tweaker:temp give.Speed_desc set value " 🏃 "
+data modify storage spawner_tweaker:temp give.Size set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Attributes.[{Name:generic.follow_range}].Base
+execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Attributes.[{Name:generic.follow_range}] run data modify storage spawner_tweaker:temp give.Size_desc set value " 👁 "
+data modify storage spawner_tweaker:temp give.Armor set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Attributes.[{Name:generic.armor}].Base
+execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Attributes.[{Name:generic.armor}] run data modify storage spawner_tweaker:temp give.Armor_desc set value " ⛨ "
 data modify storage spawner_tweaker:temp give.tags set from storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Tags
 data modify storage spawner_tweaker:temp give.uuid set from entity @s UUID
 data modify storage spawner_tweaker:temp give.SpawnPotentials set from storage spawner_tweaker:temp give.spawner.SpawnPotentials
