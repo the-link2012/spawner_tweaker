@@ -10,24 +10,19 @@ data modify storage spawner_tweaker:temp name set value {}
 data modify storage spawner_tweaker:temp name.jockey set value ""
 data modify storage spawner_tweaker:temp name.name set string block ~ ~ ~ SpawnPotentials[0].data.entity.id 10
 data modify storage spawner_tweaker:temp name.name set string block ~ ~ ~ SpawnPotentials[0].data.entity.CustomName
-data modify storage spawner_tweaker:temp name.name set string block ~ ~ ~ components."minecraft:custom_name"
 execute store result storage spawner_tweaker:temp name.id int 1 run scoreboard players get id temp
 function spawner_tweaker:spawner_tweaking/player/count_spawners with storage spawner_tweaker:temp name
 data modify storage spawner_tweaker:temp name.tweaker_id set from storage spawner_tweaker:temp variables.tweaker_id
-scoreboard players set id_in_name temp 0
-execute if data block ~ ~ ~ components."minecraft:custom_data".spawner_tweaker_spawner run scoreboard players set id_in_name temp 1
 scoreboard players set displayed_name temp 0
-execute if score id_in_name temp matches 0 if data block ~ ~ ~ SpawnPotentials[0].data.entity.Passengers[] run data modify storage spawner_tweaker:temp name.jockey set value " (Jockey)"
+execute if data block ~ ~ ~ SpawnPotentials[0].data.entity.Passengers[] run data modify storage spawner_tweaker:temp name.jockey set value " (Jockey)"
 scoreboard players set potentials temp 0
 execute store result score potentials temp if data block ~ ~ ~ SpawnPotentials[]
 
 #Actually showing the bossbar
 execute if score potentials temp matches 2.. if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/potentials/core
-execute if score id_in_name temp matches 1 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/json_id with storage spawner_tweaker:temp name
-execute if score id_in_name temp matches 1 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/text_id with storage spawner_tweaker:temp name
-execute if score id_in_name temp matches 0 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/json with storage spawner_tweaker:temp name
-execute if score id_in_name temp matches 0 if score displayed_name temp matches 0 if data block ~ ~ ~ SpawnPotentials[0].data.entity.Passengers[] run data modify storage spawner_tweaker:temp name.jockey set value " Jockey"
-execute if score id_in_name temp matches 0 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/text with storage spawner_tweaker:temp name
+execute if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/json with storage spawner_tweaker:temp name
+execute if score displayed_name temp matches 0 if data block ~ ~ ~ SpawnPotentials[0].data.entity.Passengers[] run data modify storage spawner_tweaker:temp name.jockey set value " Jockey"
+execute if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/text with storage spawner_tweaker:temp name
 
 #Check to see if we are spawning new entities or just moving them
 scoreboard players set moving temp 0
