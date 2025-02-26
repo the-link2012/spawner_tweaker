@@ -25,8 +25,8 @@ execute as @e[limit=1,sort=nearest,distance=..1,tag=st_box] run function spawner
 #Radius display
 execute store result score temp temp run data get storage spawner_tweaker:temp spawner.RequiredPlayerRange 1200
 execute store result storage spawner_tweaker:temp temp.scale float 0.0103 run scoreboard players get temp temp
-execute store result storage spawner_tweaker:temp temp.y float 0.00135 run scoreboard players get temp temp
-execute store result storage spawner_tweaker:temp temp.x float 0.00018 run scoreboard players get temp temp
+execute store result storage spawner_tweaker:temp temp.x float 0.00019 run scoreboard players get temp temp
+execute store result storage spawner_tweaker:temp temp.y float 0.00161 run scoreboard players get temp temp
 execute store result storage spawner_tweaker:temp temp.height float 0.0001 run scoreboard players get @s spawner_tweaker_offset
 scoreboard players operation temp temp += @s spawner_tweaker_offset
 execute as @e[distance=..0.1,tag=st_radius,tag=!st_radius_y] run function spawner_tweaker:spawner_tweaking/radius with storage spawner_tweaker:temp temp
