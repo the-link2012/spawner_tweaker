@@ -23,8 +23,10 @@ scoreboard objectives add spawner_tweaker_offset dummy
 scoreboard objectives add st_priming dummy
 scoreboard objectives add st_search dummy
 scoreboard objectives add st_swap dummy
+scoreboard objectives add st_drop_spawner minecraft.dropped:minecraft.spawner
 
 #Scores
+scoreboard players set $highlight_id spawner_tweaker -1
 execute unless score setup spawner_tweaker matches 5.. run scoreboard players set $reselect_ticks spawner_tweaker 20
 execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $data_population spawner_tweaker 1
 execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $search_range spawner_tweaker 6

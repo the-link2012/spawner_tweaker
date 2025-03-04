@@ -38,6 +38,3 @@ Bugs:
 -Fixed a bug where increasing block light from "-" then removing it did not reset the spawn rule
 -Added multiple failsafes to the spawner priming system, including a timeout system
 -Through great effort, prevented the spawner names from inbeedring
-
-TODO in future version updates:
-Add new blocks to raycast list

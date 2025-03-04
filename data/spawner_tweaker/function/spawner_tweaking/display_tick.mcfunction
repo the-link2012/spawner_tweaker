@@ -65,10 +65,10 @@ data modify storage spawner_tweaker:temp variables.range set from storage spawne
 data modify storage spawner_tweaker:temp variables.player_range set from storage spawner_tweaker:temp spawner.RequiredPlayerRange
 execute store result storage spawner_tweaker:temp variables.min_delay int 0.05 run data get storage spawner_tweaker:temp spawner.MinSpawnDelay
 execute store result storage spawner_tweaker:temp variables.max_delay int 0.05 run data get storage spawner_tweaker:temp spawner.MaxSpawnDelay
-data modify storage spawner_tweaker:temp variables.block_light_min set value ""
-data modify storage spawner_tweaker:temp variables.block_light_max set value ""
-data modify storage spawner_tweaker:temp variables.sky_light_min set value ""
-data modify storage spawner_tweaker:temp variables.sky_light_max set value ""
+data modify storage spawner_tweaker:temp variables.block_light_min set value "0"
+data modify storage spawner_tweaker:temp variables.block_light_max set value "15"
+data modify storage spawner_tweaker:temp variables.sky_light_min set value "0"
+data modify storage spawner_tweaker:temp variables.sky_light_max set value "15"
 data modify storage spawner_tweaker:temp variables.block_light_min set from storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[0]
 data modify storage spawner_tweaker:temp variables.block_light_max set from storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.block_light_limit[1]
 data modify storage spawner_tweaker:temp variables.sky_light_min set from storage spawner_tweaker:temp spawner.SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit[0]

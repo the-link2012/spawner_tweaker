@@ -10,6 +10,10 @@ execute if score $st_ongoing_process temp matches 1.. run tellraw @s {"color":"r
 execute if score $st_ongoing_process temp matches 1.. run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 1 1
 execute if score $st_ongoing_process temp matches 1.. run return 1
 
+execute unless block ~ ~ ~ spawner run tellraw @s {"color":"red","italic":false,"text":"There is no spawner at this block"}
+execute unless block ~ ~ ~ spawner run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 1 1
+execute unless block ~ ~ ~ spawner run return 3
+
 execute unless score $st_ongoing_process temp matches 1.. run scoreboard players set bse_timer st_priming 1
 scoreboard players set $st_ongoing_process temp 2
 

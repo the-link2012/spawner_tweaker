@@ -3,6 +3,13 @@
 #Write spawn potentials to the spawner if none exist
 execute unless data block ~ ~ ~ SpawnPotentials[0] run function spawner_tweaker:register/write_potentials
 
+#Fix light data, if none exist
+execute unless data block ~ ~ ~ SpawnData.custom_spawn_rules run data modify block ~ ~ ~ SpawnData.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
+
 #Getting the relevant positioning information
 summon marker ~ ~ ~ {UUID:[I;-44439381,467092815,-2143523091,-286623066]}
 data modify storage spawner_tweaker:temp Spawner set value {Pos:[0.0d,0.0d,0.0d],dimension:"minecraft:overworld"}
@@ -66,5 +73,7 @@ function spawner_tweaker:register/get_id with storage spawner_tweaker:temp Spawn
 execute if entity @s[tag=st_holding_ticking] if score exists temp matches 1 if score not_new temp matches 0 align xyz positioned ~0.5 ~0.8 ~0.5 run kill @e[distance=..1,limit=1,sort=nearest,tag=st_id_display]
 execute positioned ~ ~0.6 ~ if block ~ ~ ~ #spawner_tweaker:raycastable unless entity @e[distance=..0.1,tag=st_id_display] run summon text_display ~ ~ ~ {billboard:"center",start_interpolation:0,interpolation_duration:10,alignment:"center",Tags:["st_id_display"],brightness:{sky:15,block:15},text:'[{"color":"aqua","text":"ID "},{"score":{"name":"id","objective":"temp"}}]',background:1677721600,transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],see_through:1b}
 execute positioned ~ ~0.6 ~ unless block ~ ~ ~ #spawner_tweaker:raycastable positioned ~ ~-0.75 ~ unless entity @e[distance=..0.1,tag=st_id_display] run summon text_display ~ ~ ~ {billboard:"center",start_interpolation:0,interpolation_duration:10,alignment:"center",Tags:["st_id_display","in_spawner"],brightness:{sky:15,block:15},text:'[{"color":"aqua","text":"ID "},{"score":{"name":"id","objective":"temp"}}]',background:1677721600,transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],see_through:1b}
+execute positioned ~ ~0.6 ~ if block ~ ~ ~ #spawner_tweaker:raycastable run scoreboard players operation @e[distance=..0.1,tag=st_id_display] spawner_tweaker_id = id temp
+execute positioned ~ ~0.6 ~ unless block ~ ~ ~ #spawner_tweaker:raycastable positioned ~ ~-0.75 ~ run scoreboard players operation @e[distance=..0.1,tag=st_id_display] spawner_tweaker_id = id temp
 
 schedule function spawner_tweaker:register/kill_id_displays 2t

@@ -20,3 +20,5 @@ execute unless score @s spawner_tweaker_slot = @s spawner_tweaker_slot_prev if e
 scoreboard players operation @s spawner_tweaker_slot_prev = @s spawner_tweaker_slot
 tag @s add st_initilize_holding
 
+#Prompt BSE if you have dropped le spawner
+$execute if score @s st_drop_spawner matches 1.. at @e[limit=1,sort=nearest,tag=st_glass,scores={spawner_tweaker_id=$(tweaker_id)}] align xyz positioned ~0.5 ~0.5 ~0.5 run function spawner_tweaker:spawner_tweaking/player/drop_spawner
