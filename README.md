@@ -35,7 +35,7 @@ Default of 20, how many spawners to attempt to modify each tick with priming/bul
 `/scoreboard players set $highlight_id spawner_tweaker <id>`<br>
 Default of -1 (meaning any id), resets on reload. Only shows spawners with this id when triggering spawner highlights.<br>
 `/scoreboard players set $prime_range spawner_tweaker <range>`<br>
-Default of -1, cubical range to prime spawners in, with negative numbers being infinite (ex. 100 would be a 200 sized cube centered on the player)<br>
+Default of -1, cubical range to prime or update spawners in, with negative numbers being infinite (ex. 100 would be a 200 sized cube centered on the player)<br>
 `/scoreboard players set $reselect_ticks spawner_tweaker <ticks>`<br>
 Default of 20, minimum of 1. How many ticks it takes for tweaker to select a new spawner<br>
 `/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_update`<br>
