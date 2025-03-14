@@ -25,6 +25,7 @@ function spawner_tweaker:register/check_spawner with storage spawner_tweaker:tem
 scoreboard players set old_id temp -1
 execute if score exists temp matches 1.. store result score old_id temp run data get storage spawner_tweaker:temp Comparison.id
 scoreboard players set id temp -1
+execute if score exists temp matches 0 if score $st_ongoing_process temp matches 4 run scoreboard players add spawners_found st_volume 1
 
 scoreboard players set register_new temp 1
 data modify storage spawner_tweaker:temp physical_spawner set value {SpawnPotentials:[]}
@@ -51,6 +52,7 @@ execute if entity @s[tag=st_new_spawner] unless score not_new temp matches 0 run
 execute if entity @s[tag=st_new_spawner] unless score not_new temp matches 0 run scoreboard players set register_new temp 1
 
 #Automatically register this as a new id if it isn't where a previous spawner was
+execute if score exists temp matches 0 if score register_new temp matches 1 if score $st_ongoing_process temp matches 4 run scoreboard players add ids_found st_volume 1
 execute if score exists temp matches 0 if score register_new temp matches 1 run function spawner_tweaker:register/register_new_id with block ~ ~ ~
 execute store result storage spawner_tweaker:temp Spawner.id int 1 run scoreboard players get id temp
 execute if score exists temp matches 0 run function spawner_tweaker:spawner_priming/prune with storage spawner_tweaker:temp Spawner

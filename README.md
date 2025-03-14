@@ -11,6 +11,8 @@ You can prime all registered spawners using `/trigger prime_spawners set <ticks>
 
 If you want to bulk edit spawners of a specific id, modify that spawner in your world (by placing a new one in the same spot, or by using /data modify), then select it with spawner tweaker. You will be prompted on how you would like to bulk edit spawners that share the same id. Please make sure to place modified spawners on the same block, or else it will be registered as a new id.<br>
 
+Alternatively, drop your spawner while tweaking the spawner you wish to modify. This will always force the menu open, along with providing options to highlight spawners and transform spawners into another id.<br>
+
 **Bulk-editing spawners with multiple SpawnPotentials will always choose a random SpawnPotential for each spawner's SpawnData, ignoring weights*<br>
 
 ### Main Options
@@ -28,6 +30,8 @@ Removes a spawner's id and any corresponding spawner locations under that id<br>
 Highlights all loaded spawners for a certain number of ticks<br>
 `/scoreboard players set $search_range spawner_tweaker <range>`<br>
 Default of 6, max of 15, cubical range to passively register spawners in, with negative numbers being none (ex. 10 would search a 20x20x20 sized cube centered on where creative mode players are looking at)<br>
+`/trigger search_volume`<br>
+Pulls up a menu for checking an area for unregistered spawners<br>
 `/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
 Default of 20, how many spawners to attempt to modify each tick with priming/bulk edit<br>
 
@@ -42,6 +46,8 @@ Default of 20, minimum of 1. How many ticks it takes for tweaker to select a new
 Forces an id update for the spawner at that location (updates SpawnPotentials for that id)<br>
 `/execute positioned <x> <y> <z> run function spawner_tweaker:bulk_edit/trigger_bse`<br>
 Forces a bulk spawner edit for the spawner at that location (updates all spawner attributes for that id)<br>
+`/tag @s add st_reset_settings`<br>
+This tag will always set the setting to Player Range when re-entering tweaking mode (default off)<br>
 `/scoreboard players set $efficient_data spawner_tweaker 1`<br>
 1 or 0, default 1. Wheather or not to delete unnecessary data in spawners when priming. Useful for reducing lag when publishing maps.<br>
 `/scoreboard players set $data_population spawner_tweaker 1`<br>

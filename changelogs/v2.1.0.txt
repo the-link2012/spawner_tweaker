@@ -13,8 +13,5 @@ QOL:
 Bugs:
 -Added system failsafe to delete tweaker displays accidentally copied with axiom
 
-TODO:
--add a randomizer
-
 TODO in future version updates:
 Add new blocks to raycast list

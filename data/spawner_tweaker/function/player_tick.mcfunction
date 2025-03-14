@@ -8,6 +8,7 @@ scoreboard players enable @s give_spawner
 scoreboard players enable @s give_all_spawners
 scoreboard players enable @s delete_spawner_id
 scoreboard players enable @s highlight_spawners
+scoreboard players enable @s search_volume
 
 #Initialization
 execute store result score @s[tag=!st_init_2] st_search run random value 1..20
@@ -24,6 +25,8 @@ execute unless score @s toggle_spawner_tweaker matches -999 run function spawner
 execute if score @s give_spawner matches -999.. run function spawner_tweaker:give_spawners/trigger_give
 execute unless score @s give_all_spawners matches 0 run function spawner_tweaker:give_spawners/trigger_give_all
 execute if score @s highlight_spawners matches 1.. run function spawner_tweaker:highlight/trigger
+execute if score @s search_volume matches 1.. run function spawner_tweaker:search/volume/trigger
+
 execute unless score @s toggle_piercing_spawner_tweaker matches ..0 run function spawner_tweaker:toggle_block_pierce
 
 
@@ -34,3 +37,4 @@ execute unless score timer st_priming matches 1.. unless score bse_timer st_prim
 scoreboard players add @s st_search 1
 execute if score @s st_search matches 20.. run scoreboard players set @s st_search 0
 execute if score @s st_search matches 0 run function spawner_tweaker:search/search_core
+

@@ -1,0 +1,20 @@
+Improvements from the previous version (Spawner Tweaker v2.1.0):
+
+Features:
+-You can now check spawners in an area. Pull up the menu with /trigger search_volume
+
+QOL:
+-Prime all spawners function now kills id displays
+-Settings preserve when selecting new spawners, add tag st_reset_settings to disable
+-Default reselect ticks is now set to 5 (used to be 20)
+
+Bugs:
+
+
+TODO:
+-add a randomizer
+-add id swapper - when dropping spawner
+-add chest id system bones?
+
+TODO in future version updates:
+Add new blocks to raycast list

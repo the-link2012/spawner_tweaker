@@ -13,6 +13,9 @@ execute if score count temp matches 1 run data modify storage spawner_tweaker:te
 execute if score count temp matches 1 store success score different temp run data modify storage spawner_tweaker:temp same set from block ~ ~ ~ SpawnData
 execute if score efficient_data spawner_tweaker matches 1.. if score $data_population spawner_tweaker matches 1 if score count temp matches 1 if score different temp matches 0 run data remove block ~ ~ ~ SpawnPotentials[]
 
+#Killing unneeded displays
+execute align xyz positioned ~0.5 ~0.8 ~0.5 run kill @e[distance=..1,limit=1,sort=nearest,tag=st_id_display]
+
 #Remove Data if the spawner isn't there
 scoreboard players set remove temp 0
 execute unless block ~ ~ ~ spawner run scoreboard players set remove temp 1

@@ -36,7 +36,7 @@ $execute if score moving temp matches 1 run kill @e[type=!player,type=!interacti
 execute if score moving temp matches 0 run function spawner_tweaker:spawner_tweaking/spawn_displays
 
 #Explanation code and resetting settings
-execute if score moving temp matches 0 run scoreboard players set @p[tag=st_holding_ticking] spawner_tweaker_setting 4
+execute if score moving temp matches 0 run scoreboard players set @p[tag=st_holding_ticking,tag=!st_explain] spawner_tweaker_setting 4
 execute if score moving temp matches 0 run tellraw @s[tag=!st_explain] {"text":"Spawner marked. Left or Right click to tweak. Crouch+click to change element being tweaked.","color":"white","bold":false,"italic":false}
 tag @s add st_explain
 

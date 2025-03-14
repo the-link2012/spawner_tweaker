@@ -3,6 +3,11 @@
 #Debug message
 say Link's Spawner Tweaker loaded
 
+#Fix visuals of volume
+execute unless score $st_ongoing_process temp matches 4 run kill 18c359ed-00ca-4242-9e49-91cd8846f33a
+execute unless score $st_ongoing_process temp matches 4 run scoreboard players set $pos1_set st_volume 0
+execute unless score $st_ongoing_process temp matches 4 run scoreboard players set $pos2_set st_volume 0
+
 #Scoreboards
 scoreboard objectives add temp dummy
 scoreboard objectives add spawner_tweaker dummy
@@ -13,6 +18,7 @@ scoreboard objectives add spawner_tweaker_setting dummy
 scoreboard objectives add prime_spawners trigger
 scoreboard objectives add toggle_spawner_tweaker trigger
 scoreboard objectives add toggle_piercing_spawner_tweaker trigger
+scoreboard objectives add search_volume trigger
 scoreboard objectives add highlight_spawners trigger
 scoreboard objectives add give_all_spawners trigger
 scoreboard objectives add give_spawner trigger
@@ -24,16 +30,19 @@ scoreboard objectives add st_priming dummy
 scoreboard objectives add st_search dummy
 scoreboard objectives add st_swap dummy
 scoreboard objectives add st_drop_spawner minecraft.dropped:minecraft.spawner
+scoreboard objectives add st_volume dummy
 
 #Scores
 scoreboard players set $highlight_id spawner_tweaker -1
-execute unless score setup spawner_tweaker matches 5.. run scoreboard players set $reselect_ticks spawner_tweaker 20
+execute unless score setup spawner_tweaker matches 6.. unless score $reselect_ticks spawner_tweaker matches ..19 run scoreboard players set $reselect_ticks spawner_tweaker 5
 execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $data_population spawner_tweaker 1
 execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $search_range spawner_tweaker 6
 execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $modification_limit spawner_tweaker 20
 execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $efficient_data spawner_tweaker 1
 execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $prime_range spawner_tweaker -1
-scoreboard players set setup spawner_tweaker 5
+scoreboard players set setup spawner_tweaker 6
+
+
 
 scoreboard players set -1 numbers -1
 scoreboard players set 2 numbers 2
