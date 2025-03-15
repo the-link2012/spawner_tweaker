@@ -55,16 +55,17 @@ This tag will always set the setting to Player Range when re-entering tweaking m
 
 ### Spawner and Chest Randomizer
 **ALWAYS MAKE BACKUPS WHEN USING RANDOMIZERS**<br>
-Spawner Tweaker comes with randomizer capabilities. The spawner randomizer is completed. Randomized spawners have their potentials and SpawnData randomized, but not other aspects such as player range, delay, and count. The chest randomizer is still in development.<br>
+Spawner Tweaker comes with randomizer capabilities. Randomized spawners have their potentials and SpawnData randomized, but not other aspects such as player range, delay, and count. The chest randomizer is still in development.<br>
 Before using the randomizer, make sure you first:<br>
 * Remove problematic spawners (such as anti-cheese or potion) with `/trigger delete_spawner_id set <id>`, see all map spawners with `/trigger give_all_spawners`
 * Remove problematic chests (such as dev chests) with `FEATURE INCOMPLETE`<br>
+
 You may now run the chest and spawner randomizer functions.<br>
 
 `/scoreboard players set $randomizer_seed spawner_tweaker x`<br>
 Sets the seed for the randomizer. If unassigned, a random seed will be chosen.<br>
 `/function spawner_tweaker:randomizer/randomize_equally`<br>
-Each spawner will chose a random id with equal probability.<br>
+Each spawner will choose a random id with equal probability.<br>
 `/function spawner_tweaker:randomizer/randomize_weighted`<br>
 Spawners in the map will be randomized, but keep their id distribution (so if your original map has 5 skeleton and 10 zombie spawners, the randomizer will have 5 sekeleton and 10 zombie spawners total).<br>
 `UNFINISHED`<br>
