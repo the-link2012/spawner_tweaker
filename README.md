@@ -58,7 +58,7 @@ This tag will always set the setting to Player Range when re-entering tweaking m
 Spawner Tweaker comes with randomizer capabilities. Randomized spawners have their potentials and SpawnData randomized, but not other aspects such as player range, delay, and count. The chest randomizer is still in development.<br>
 Before using the randomizer, make sure you first:<br>
 * Remove problematic spawners (such as anti-cheese or potion) with `/trigger delete_spawner_id set <id>`, see all map spawners with `/trigger give_all_spawners`
-* Remove problematic chests (such as dev chests) with `FEATURE INCOMPLETE`<br>
+* Remove problematic chests (such as dev chests and fleecy boxes) with `FEATURE INCOMPLETE`<br>
 
 You may now run the chest and spawner randomizer functions.<br>
 
