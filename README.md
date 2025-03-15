@@ -53,6 +53,25 @@ This tag will always set the setting to Player Range when re-entering tweaking m
 `/scoreboard players set $data_population spawner_tweaker 1`<br>
 1 or 0, default 1. Wheather or not to populate spawner data when priming/bulk editing; no mob will appear in the spawner until a player gets in range, useful if you use weights or want this effect.<br>
 
+### Spawner and Chest Randomizer
+**ALWAYS MAKE BACKUPS WHEN USING RANDOMIZERS**<br>
+Spawner Tweaker comes with randomizer capabilities. The spawner randomizer is completed. Randomized spawners have their potentials and SpawnData randomized, but not other aspects such as player range, delay, and count. The chest randomizer is still in development.<br>
+Before using the randomizer, make sure you first:<br>
+* Remove problematic spawners (such as anti-cheese or potion) with `/trigger delete_spawner_id set <id>`, see all map spawners with `/trigger give_all_spawners`
+* Remove problematic chests (such as dev chests) with `FEATURE INCOMPLETE`<br>
+You may now run the chest and spawner randomizer functions.<br>
+
+`/scoreboard players set $randomizer_seed spawner_tweaker x`<br>
+Sets the seed for the randomizer. If unassigned, a random seed will be chosen.<br>
+`/function spawner_tweaker:randomizer/randomize_equally`<br>
+Each spawner will chose a random id with equal probability.<br>
+`/function spawner_tweaker:randomizer/randomize_weighted`<br>
+Spawners in the map will be randomized, but keep their id distribution (so if your original map has 5 skeleton and 10 zombie spawners, the randomizer will have 5 sekeleton and 10 zombie spawners total).<br>
+`UNFINISHED`<br>
+Randomizes all loot containers in the map (a loot container is any chest, barrel, or shulker that has items or a loot table)<br>
+`UNFINISHED`<br>
+Range to remove chests from the chest id system. Use this to clear out chests inside of dev rooms or ones you always want to generate in the same spot.<br>
+
 ### Reuse and Contact
 Feel free to use, modify, and distribute. This datapack is by link2012.<br>
 Latest version at https://github.com/the-link2012/spawner_tweaker<br>

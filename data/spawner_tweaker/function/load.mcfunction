@@ -40,9 +40,8 @@ execute unless score setup spawner_tweaker matches 4.. run scoreboard players se
 execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $modification_limit spawner_tweaker 20
 execute unless score setup spawner_tweaker matches 1.. run scoreboard players set $efficient_data spawner_tweaker 1
 execute unless score setup spawner_tweaker matches 4.. run scoreboard players set $prime_range spawner_tweaker -1
-scoreboard players set setup spawner_tweaker 6
-
-
+execute unless score setup spawner_tweaker matches 7.. run scoreboard players set $randomizer_seed spawner_tweaker 0
+scoreboard players set setup spawner_tweaker 7
 
 scoreboard players set -1 numbers -1
 scoreboard players set 2 numbers 2
