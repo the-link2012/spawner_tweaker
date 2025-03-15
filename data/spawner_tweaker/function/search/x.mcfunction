@@ -1,5 +1,6 @@
 #Iterates search along the x axis
 
+execute if block ~ ~ ~ #spawner_tweaker:container run function spawner_tweaker:chests/register/found_container
 execute if block ~ ~ ~ spawner run function spawner_tweaker:register/register_base
 execute if score debug temp matches 1.. run particle electric_spark ~ ~ ~ 0 0 0 0 1 force @s
 
