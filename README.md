@@ -11,7 +11,7 @@ You can prime all registered spawners using `/trigger prime_spawners set <ticks>
 
 If you want to bulk edit spawners of a specific id, modify that spawner in your world (by placing a new one in the same spot, or by using /data modify), then select it with spawner tweaker. You will be prompted on how you would like to bulk edit spawners that share the same id. Please make sure to place modified spawners on the same block, or else it will be registered as a new id.<br>
 
-Alternatively, drop your spawner while tweaking the spawner you wish to modify. This will always force the menu open, along with providing options to highlight spawners and transform spawners into another id.<br>
+Alternatively, drop your spawner while tweaking the spawner you wish to modify. This will always force the menu open, along with providing options to highlight spawners and transform spawners into the held spawner's id.<br>
 
 **Bulk-editing spawners with multiple SpawnPotentials will always choose a random SpawnPotential for each spawner's SpawnData, ignoring weights*<br>
 

@@ -2,6 +2,7 @@ Improvements from the previous version (Spawner Tweaker v2.1.0):
 
 Features:
 -You can now check spawners in an area. Pull up the menu with /trigger search_volume
+-You can now transform spawners from one id into another. To pull up the menu, throw a given spawner you wish to transform into while tweaking a spawner whose id you wish to transform from.
 
 QOL:
 -Prime all spawners function now kills id displays
@@ -13,7 +14,6 @@ Bugs:
 
 TODO:
 -add a randomizer
--add id swapper - when dropping spawner
 -add chest id system bones?
 
 TODO in future version updates:
