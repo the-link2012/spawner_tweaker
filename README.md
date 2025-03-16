@@ -29,7 +29,7 @@ Removes a spawner's id and any corresponding spawner locations under that id<br>
 `/trigger highlight_spawners set <ticks>`<br>
 Highlights all loaded spawners for a certain number of ticks<br>
 `/scoreboard players set $search_range spawner_tweaker <range>`<br>
-Default of 6, max of 15, cubical range to passively register spawners in, with negative numbers being none (ex. 10 would search a 20x20x20 sized cube centered on where creative mode players are looking at)<br>
+Default of 6, max of 15, cubical range to passively register spawners and containers in, with negative numbers being none (ex. 10 would search a 20x20x20 sized cube centered on where creative mode players are looking at)<br>
 `/trigger search_volume`<br>
 Pulls up a menu for checking an area for unregistered spawners<br>
 `/scoreboard players set $modification_limit spawner_tweaker <spawners/tick>`<br>
@@ -55,7 +55,7 @@ This tag will always set the setting to Player Range when re-entering tweaking m
 
 ### Spawner and Chest Randomizer
 **ALWAYS MAKE BACKUPS WHEN USING RANDOMIZERS**<br>
-Spawner Tweaker comes with randomizer capabilities. Randomized spawners have their potentials and SpawnData randomized, but not other aspects such as player range, delay, and count. The chest randomizer is still in development.<br>
+Spawner Tweaker comes with randomizer capabilities. Randomized spawners have their potentials and SpawnData randomized, but not other aspects such as player range, delay, and count. Container (chest) randomization swaps the contents or loot tables of all registered containers. Containers register into the system just as spawners do--either passively while looking around or by running volume checks.<br>
 Before using the randomizer, make sure you first:<br>
 * Remove problematic spawners (such as anti-cheese or potion) with `/trigger delete_spawner_id set <id>`, see all map spawners with `/trigger give_all_spawners`
 * Remove problematic chests (such as dev chests and fleecy boxes) with `/trigger delete_nearby_chests set <range>`<br>
@@ -68,10 +68,13 @@ Sets the seed for the randomizer. If unassigned, a random seed will be chosen.<b
 Each spawner will choose a random id with equal probability.<br>
 `/function spawner_tweaker:randomizer/randomize_weighted`<br>
 Spawners in the map will be randomized, but keep their id distribution (so if your original map has 5 skeleton and 10 zombie spawners, the randomizer will have 5 sekeleton and 10 zombie spawners total).<br>
-`UNFINISHED`<br>
+`/function spawner_tweaker:chests/randomizer/randomize`<br>
 Randomizes all loot containers in the map (a loot container is any chest, barrel, or shulker that has items or a loot table)<br>
 `/trigger delete_nearby_chests set <range>`<br>
 Cubical range centered on yourself to remove chests from the chest id system. Use this to clear out chests inside of dev rooms or ones you always want to generate in the same spot.<br>
+
+Known limitations:<br>
+Randomized containers that had loot tables will cause block updates. This is because mojang doesn't allow /data remove on block loot tables.<br>
 
 ### Reuse and Contact
 Feel free to use, modify, and distribute. This datapack is by link2012.<br>
