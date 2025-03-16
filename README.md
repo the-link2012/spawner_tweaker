@@ -58,7 +58,7 @@ This tag will always set the setting to Player Range when re-entering tweaking m
 Spawner Tweaker comes with randomizer capabilities. Randomized spawners have their potentials and SpawnData randomized, but not other aspects such as player range, delay, and count. The chest randomizer is still in development.<br>
 Before using the randomizer, make sure you first:<br>
 * Remove problematic spawners (such as anti-cheese or potion) with `/trigger delete_spawner_id set <id>`, see all map spawners with `/trigger give_all_spawners`
-* Remove problematic chests (such as dev chests and fleecy boxes) with `FEATURE INCOMPLETE`<br>
+* Remove problematic chests (such as dev chests and fleecy boxes) with `/trigger delete_nearby_chests set <range>`<br>
 
 You may now run the chest and spawner randomizer functions.<br>
 
@@ -70,8 +70,8 @@ Each spawner will choose a random id with equal probability.<br>
 Spawners in the map will be randomized, but keep their id distribution (so if your original map has 5 skeleton and 10 zombie spawners, the randomizer will have 5 sekeleton and 10 zombie spawners total).<br>
 `UNFINISHED`<br>
 Randomizes all loot containers in the map (a loot container is any chest, barrel, or shulker that has items or a loot table)<br>
-`UNFINISHED`<br>
-Range to remove chests from the chest id system. Use this to clear out chests inside of dev rooms or ones you always want to generate in the same spot.<br>
+`/trigger delete_nearby_chests set <range>`<br>
+Cubical range centered on yourself to remove chests from the chest id system. Use this to clear out chests inside of dev rooms or ones you always want to generate in the same spot.<br>
 
 ### Reuse and Contact
 Feel free to use, modify, and distribute. This datapack is by link2012.<br>

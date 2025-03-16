@@ -7,6 +7,7 @@ scoreboard players enable @s toggle_piercing_spawner_tweaker
 scoreboard players enable @s give_spawner
 scoreboard players enable @s give_all_spawners
 scoreboard players enable @s delete_spawner_id
+scoreboard players enable @s delete_nearby_chests
 scoreboard players enable @s highlight_spawners
 scoreboard players enable @s search_volume
 
@@ -26,6 +27,7 @@ execute if score @s give_spawner matches -999.. run function spawner_tweaker:giv
 execute unless score @s give_all_spawners matches 0 run function spawner_tweaker:give_spawners/trigger_give_all
 execute if score @s highlight_spawners matches 1.. run function spawner_tweaker:highlight/trigger
 execute if score @s search_volume matches 1.. run function spawner_tweaker:search/volume/trigger
+execute if score @s delete_nearby_chests matches 1.. run function spawner_tweaker:chests/delete/trigger
 
 execute unless score @s toggle_piercing_spawner_tweaker matches ..0 run function spawner_tweaker:toggle_block_pierce
 
