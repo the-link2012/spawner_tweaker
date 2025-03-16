@@ -6,6 +6,7 @@ Features:
 -Added a container registry system for people that want to make randomizers (or if I get around to making a chest randomizer)
 -Added a trigger to remove containers from the registry system based on range
 -Added a spawner randomizer with several different randomization settings
+-Added a chest randomizer! Only minor limitations.
 
 QOL:
 -Prime all spawners function now kills id displays
