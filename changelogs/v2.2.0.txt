@@ -16,8 +16,5 @@ QOL:
 Bugs:
 -None this time!
 
-TODO:
--add a chest randomizer
-
 TODO in future version updates:
 Add new blocks to raycast list
