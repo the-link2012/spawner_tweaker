@@ -1,9 +1,9 @@
 {
   "pack": {
-    "pack_format": 57,
+    "pack_format": 69,
     "supported_formats": {
-      "min_inclusive": 57,
-      "max_inclusive": 61
+      "min_inclusive": 69,
+      "max_inclusive": 69
     },
     "description": {
       "text": "Spawner tweaker by link2012"
