@@ -1,5 +1,5 @@
 This datapack is currently a work in progress for 1.21.5. For legacy versions and backports, view branches on the repository.<br>
-**NOTE:** I if your map was 1.21.4 and you used tweaker, you will need to re-register spawners or update most ids due to nbt changes. Use these commands to reset the data storage:<br>
+**NOTE:** If your map was 1.21.4 and used Spawner Tweaker, you will need to re-register spawners or update most ids due to nbt changes. Use these commands to reset the data storage for re-registering:<br>
 `/data remove storage spawner_tweaker:temp Ids`<br>
 `/data remove storage spawner_tweaker:temp Spawners`<br>
 
