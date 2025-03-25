@@ -22,5 +22,3 @@ function spawner_tweaker:spawner_tweaking/player/bossbars/potentials/concat with
 
 data modify storage spawner_tweaker:temp name.name set from storage spawner_tweaker:temp potentials.name
 function spawner_tweaker:spawner_tweaking/player/bossbars/potentials/bossbar with storage spawner_tweaker:temp name
-#Debug
-#function spawner_tweaker:spawner_tweaking/player/bossbars/potentials/tellraw_test with storage spawner_tweaker:temp potentials

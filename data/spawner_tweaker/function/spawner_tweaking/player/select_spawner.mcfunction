@@ -46,3 +46,4 @@ scoreboard players set @s st_swap 0
 
 #Teleports for if this is switching spawners
 $execute if score moving temp matches 1.. run tp @e[type=!player,type=!interaction,scores={spawner_tweaker_id=$(tweaker_id)}] ~ ~ ~
+$execute if score moving temp matches 1.. run scoreboard players set @e[type=!player,type=!interaction,scores={spawner_tweaker_id=$(tweaker_id)},tag=st_glass] temp 14
