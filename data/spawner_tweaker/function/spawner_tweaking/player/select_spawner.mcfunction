@@ -21,6 +21,9 @@ execute if score id_in_name temp matches 0 if data block ~ ~ ~ SpawnPotentials[0
 scoreboard players set potentials temp 0
 execute store result score potentials temp if data block ~ ~ ~ SpawnPotentials[]
 
+#Fix up when the id is in the name
+execute if score id_in_name temp matches 1 run function spawner_tweaker:spawner_tweaking/player/fix_id_in_name with storage spawner_tweaker:temp name
+
 #Actually showing the bossbar
 execute if score potentials temp matches 2.. if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/potentials/core
 execute if score id_in_name temp matches 1 if score displayed_name temp matches 0 run function spawner_tweaker:spawner_tweaking/player/bossbars/json_id with storage spawner_tweaker:temp name
