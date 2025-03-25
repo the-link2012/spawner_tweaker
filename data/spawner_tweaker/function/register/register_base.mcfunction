@@ -11,11 +11,11 @@ execute unless data block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules run d
 execute unless data block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
 
 #Getting the relevant positioning information
-summon marker ~ ~ ~ {UUID:[I;-44439381,467092815,-2143523091,-286623066]}
+summon marker ~ ~ ~ {UUID:[I;-1549706688,1223903313,-1879781877,1584575981]}
 data modify storage spawner_tweaker:temp Spawner set value {Pos:[0.0d,0.0d,0.0d],dimension:"minecraft:overworld"}
-data modify storage spawner_tweaker:temp Spawner.Pos set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos
+data modify storage spawner_tweaker:temp Spawner.Pos set from entity a3a15a40-48f3-4851-8ff4-ce0b5e72b5ed Pos
 data modify storage spawner_tweaker:temp Spawner.dimension set from entity @s Dimension
-kill fd59e8ab-1bd7-454f-803c-6eedeeea7aa6
+kill a3a15a40-48f3-4851-8ff4-ce0b5e72b5ed
 
 #Checking if a spawner already exists here
 data modify storage spawner_tweaker:temp Comparison set value {}
