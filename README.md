@@ -23,7 +23,7 @@ Alternatively, drop your spawner while tweaking the spawner you wish to modify. 
 `/trigger toggle_spawner_tweaker`<br>
 Enables/disables spawner tweaker for you (default is on)<br>
 `/trigger toggle_piercing_spawner_tweaker`<br>
-Toggles if spawner tweaker's raycast halts when hitting solid blocks (default is piering)<br>
+Toggles if spawner tweaker's raycast halts when hitting solid blocks (default is piercing)<br>
 `/trigger give_spawner set <id>`<br>
 Gives you a placable spawner<br>
 `/trigger give_all_spawners`<br>
