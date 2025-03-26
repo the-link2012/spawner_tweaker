@@ -2,6 +2,8 @@
 
 #Kill contents of the container
 data remove block ~ ~ ~ Items
+data remove block ~ ~ ~ LootTable
+
 execute if data block ~ ~ ~ LootTable run function spawner_tweaker:chests/randomizer/i_hate_mojang1
 
 #Generate new contents
