@@ -36,7 +36,7 @@ execute as @e[distance=..0.1,tag=st_radius,tag=!st_radius_y] run function spawne
 execute as @e[distance=..0.1,tag=st_radius_y] run function spawner_tweaker:spawner_tweaking/radius with storage spawner_tweaker:temp temp
 
 execute if score first_ticking temp matches 1.. as @e[distance=..0.1,tag=st_radius] run data merge entity @s {text:{"text":"⭕","color":"#ee7171","italic":false},text_opacity:80}
-execute if score first_ticking temp matches 1.. if entity @s[tag=st_player_near] as @e[distance=..0.1,tag=st_radius] run data merge entity @s {text:'{"text":"⭕","color":"#58eb71","italic":false}',text_opacity:50}
+execute if score first_ticking temp matches 1.. if entity @s[tag=st_player_near] as @e[distance=..0.1,tag=st_radius] run data merge entity @s {text:{"text":"⭕","color":"#58eb71","italic":false},text_opacity:50}
 execute unless score first_ticking temp matches 1.. as @e[distance=..0.1,tag=st_radius] run data merge entity @s {text:{"text":"⭕","color":"red","italic":false},text_opacity:100}
 execute unless score first_ticking temp matches 1.. if entity @s[tag=st_player_near] as @e[distance=..0.1,tag=st_radius] run data merge entity @s {text:{"text":"⭕","color":"dark_green","italic":false},text_opacity:60}
 
