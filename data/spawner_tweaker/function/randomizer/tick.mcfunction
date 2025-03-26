@@ -11,7 +11,7 @@ data remove storage spawner_tweaker:temp Priming[{completed:1b}]
 
 #Displays
 scoreboard players add @e[tag=st_primer,type=item_display] prime_spawners 1
-kill @e[tag=st_primer,type=item_display,scores={prime_spawners=60..}]
+kill @e[tag=st_primer,tag=!st_highlight,type=item_display,scores={prime_spawners=60..}]
 
 #Inciment timer and display
 scoreboard players add random_timer st_priming 1
