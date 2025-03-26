@@ -1,4 +1,4 @@
-Improvements from the previous version (Spawner Tweaker v2.1.0 for 1.21.4):
+Improvements from the previous version (Spawner Tweaker v2.2.0 for 1.21.4):
 
 Features:
 -Spawner Tweaker now works in 1.21.5
