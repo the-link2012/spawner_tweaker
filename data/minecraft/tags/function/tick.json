@@ -1,5 +1,6 @@
 {
   "values":[
-    "spawner_tweaker:main_tick"
+    "spawner_tweaker:main_tick",
+    "additional_features:main/tick"
   ]
 }

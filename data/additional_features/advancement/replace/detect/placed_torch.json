@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "#additional_features:replace/torchs"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "requirements"
+    ]
+  ],
+  "rewards": {
+    "function": "additional_features:replace/detect/placed_torch"
+  }
+}

@@ -1,0 +1,1 @@
+execute if items entity @s container.* coal if items entity @s container.* stick run function additional_features:auto_crafting/torch/run
