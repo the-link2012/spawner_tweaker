@@ -11,6 +11,7 @@ data modify storage spawner_tweaker:temp name.jockey set value ""
 data modify storage spawner_tweaker:temp name.name set string block ~ ~ ~ SpawnPotentials[0].data.entity.id 10
 data modify storage spawner_tweaker:temp name.name set string block ~ ~ ~ SpawnPotentials[0].data.entity.CustomName
 data modify storage spawner_tweaker:temp name.name set string block ~ ~ ~ components."minecraft:custom_name"
+data modify storage spawner_tweaker:temp name.name set from block ~ ~ ~ components."minecraft:item_name"
 execute store result storage spawner_tweaker:temp name.id int 1 run scoreboard players get id temp
 function spawner_tweaker:spawner_tweaking/player/count_spawners with storage spawner_tweaker:temp name
 data modify storage spawner_tweaker:temp name.tweaker_id set from storage spawner_tweaker:temp variables.tweaker_id

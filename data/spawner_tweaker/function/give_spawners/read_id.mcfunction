@@ -79,9 +79,11 @@ execute if score continue temp matches 1.. run function spawner_tweaker:give_spa
 scoreboard players set name temp 0
 execute if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.CustomName run scoreboard players set name temp 1
 execute if data storage spawner_tweaker:temp give.spawner.components."minecraft:custom_name" unless data storage spawner_tweaker:temp give.spawner.components."minecraft:custom_data".spawner_tweaker_spawner run scoreboard players set name temp 2
+execute if data storage spawner_tweaker:temp give.spawner.components."minecraft:item_name" unless data storage spawner_tweaker:temp give.spawner.components."minecraft:custom_data".spawner_tweaker_spawner run scoreboard players set name temp 2
 execute if score name temp matches 0 run data modify storage spawner_tweaker:temp give.name set string storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.id 10
 execute if score name temp matches 1 run data modify storage spawner_tweaker:temp give.name set string storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.CustomName
-execute if score name temp matches 2 run data modify storage spawner_tweaker:temp give.name set string storage spawner_tweaker:temp give.spawner.components."minecraft:custom_name"
+execute if score name temp matches 2 if data storage spawner_tweaker:temp give.spawner.components."minecraft:custom_name" run data modify storage spawner_tweaker:temp give.name set from storage spawner_tweaker:temp give.spawner.components."minecraft:custom_name"
+execute if score name temp matches 2 if data storage spawner_tweaker:temp give.spawner.components."minecraft:item_name" run data modify storage spawner_tweaker:temp give.name set from storage spawner_tweaker:temp give.spawner.components."minecraft:item_name"
 execute if score name temp matches 0 if data storage spawner_tweaker:temp give.spawner.SpawnPotentials[0].data.entity.Passengers[] run data modify storage spawner_tweaker:temp give.Jockey set value " Jockey"
 
 #Ouputs
