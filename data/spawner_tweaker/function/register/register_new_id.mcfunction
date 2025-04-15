@@ -17,10 +17,12 @@ data remove storage spawner_tweaker:temp id.SpawnData
 scoreboard players set name temp 0
 execute if data storage spawner_tweaker:temp id.SpawnPotentials[0].data.entity.CustomName run scoreboard players set name temp 1
 execute if data storage spawner_tweaker:temp id.components."minecraft:custom_name" unless data storage spawner_tweaker:temp id.components."minecraft:custom_data".spawner_tweaker_spawner run scoreboard players set name temp 2
+execute if data storage spawner_tweaker:temp id.components."minecraft:item_name" run scoreboard players set name temp 3
 execute store result storage spawner_tweaker:temp variables.id int 1 run data get storage spawner_tweaker:temp id.id
 execute if score name temp matches 0 run data modify storage spawner_tweaker:temp id.name set string storage spawner_tweaker:temp id.SpawnPotentials[0].data.entity.id 10
 execute if score name temp matches 1 run data modify storage spawner_tweaker:temp id.name set string storage spawner_tweaker:temp id.SpawnPotentials[0].data.entity.CustomName
 execute if score name temp matches 2 run data modify storage spawner_tweaker:temp id.name set from storage spawner_tweaker:temp id.components."minecraft:custom_name"
+execute if score name temp matches 3 run data modify storage spawner_tweaker:temp id.name set from storage spawner_tweaker:temp id.components."minecraft:item_name"
 
 #Write new id to ids storage
 data modify storage spawner_tweaker:temp Ids append from storage spawner_tweaker:temp id

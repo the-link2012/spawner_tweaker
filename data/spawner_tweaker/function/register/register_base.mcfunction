@@ -4,11 +4,20 @@
 execute unless data block ~ ~ ~ SpawnPotentials[0] run function spawner_tweaker:register/write_potentials
 
 #Fix light data, if none exist
-execute unless data block ~ ~ ~ SpawnData.custom_spawn_rules run data modify block ~ ~ ~ SpawnData.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
-execute unless data block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
-execute unless data block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
-execute unless data block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
-execute unless data block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules set value {sky_light_limit:0,block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnData.custom_spawn_rules run data modify block ~ ~ ~ SpawnData.custom_spawn_rules set value {block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules set value {block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules set value {block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules set value {block_light_limit:[I;0,7]}
+execute unless data block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules run data modify block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules set value {block_light_limit:[I;0,7]}
+
+#Fix scuffed light data if need be
+scoreboard players set scuffed_light temp 0
+execute if data block ~ ~ ~ SpawnData.custom_spawn_rules{sky_light_limit:0} run scoreboard players set scuffed_light temp 1
+execute if score scuffed_light temp matches 1 if data block ~ ~ ~ SpawnData.custom_spawn_rules{sky_light_limit:0} run data remove block ~ ~ ~ SpawnData.custom_spawn_rules.sky_light_limit
+execute if score scuffed_light temp matches 1 if data block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules{sky_light_limit:0} run data remove block ~ ~ ~ SpawnPotentials[0].data.custom_spawn_rules.sky_light_limit
+execute if score scuffed_light temp matches 1 if data block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules{sky_light_limit:0} run data remove block ~ ~ ~ SpawnPotentials[1].data.custom_spawn_rules.sky_light_limit
+execute if score scuffed_light temp matches 1 if data block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules{sky_light_limit:0} run data remove block ~ ~ ~ SpawnPotentials[2].data.custom_spawn_rules.sky_light_limit
+execute if score scuffed_light temp matches 1 if data block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules{sky_light_limit:0} run data remove block ~ ~ ~ SpawnPotentials[3].data.custom_spawn_rules.sky_light_limit
 
 #Getting the relevant positioning information
 summon marker ~ ~ ~ {UUID:[I;-1549706688,1223903313,-1879781877,1584575981]}
