@@ -4,7 +4,7 @@
 scoreboard players set $st_1s_timer temp 0
 
 #Skip if nobody is here or this is invalid
-execute if score $pos1_set st_volume matches 0 run return 1
+execute if score $pos1_set st_volume matches 99999999 run return 1
 
 #Visualization
 data modify storage spawner_tweaker:temp variables.x set value 999999
@@ -26,8 +26,8 @@ function spawner_tweaker:search/volume/visualize_particles with storage spawner_
 #Visualizing the box
 scoreboard players set st_fail temp 2
 execute if entity @s[tag=st_show_box] run scoreboard players set st_fail temp 0
-execute if score $pos2_set st_volume matches 0 run scoreboard players add st_fail temp 1
-execute if score $pos1_set st_volume matches 0 run scoreboard players add st_fail temp 1
+execute if score $pos2_set st_volume matches 99999999 run scoreboard players add st_fail temp 1
+execute if score $pos1_set st_volume matches 99999999 run scoreboard players add st_fail temp 1
 execute if score st_fail temp matches 1.. run return 1
 
 kill 18c359ed-00ca-4242-9e49-91cd8846f33a

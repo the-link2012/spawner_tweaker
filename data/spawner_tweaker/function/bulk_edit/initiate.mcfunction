@@ -15,8 +15,10 @@ data modify storage spawner_tweaker:temp update_to set from block ~ ~ ~
 data remove storage spawner_tweaker:temp update_to.SpawnData
 
 summon marker ~ ~ ~ {UUID:[I;-44439381,467092815,-2143523091,-286623066]}
-data modify storage spawner_tweaker:temp Spawner set value {Pos:[0.0d,0.0d,0.0d],dimension:"minecraft:overworld"}
-data modify storage spawner_tweaker:temp Spawner.Pos set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos
+data modify storage spawner_tweaker:temp Spawner set value {x:0,y:0,z:0,dimension:"minecraft:overworld"}
+data modify storage spawner_tweaker:temp Spawner.x set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos[0]
+data modify storage spawner_tweaker:temp Spawner.y set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos[1]
+data modify storage spawner_tweaker:temp Spawner.z set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos[2]
 data modify storage spawner_tweaker:temp Spawner.dimension set from entity @s Dimension
 kill fd59e8ab-1bd7-454f-803c-6eedeeea7aa6
 function spawner_tweaker:register/get_id with storage spawner_tweaker:temp Spawner
@@ -36,13 +38,13 @@ data modify storage spawner_tweaker:temp Check_ID set from storage spawner_tweak
 function spawner_tweaker:bulk_edit/check_ids
 
 #Writing data directly if there is no range requirement
-execute unless score $prime_range spawner_tweaker matches 1.. run data modify storage spawner_tweaker:temp BSE set from storage spawner_tweaker:temp Checking
+execute unless score $modification_range spawner_tweaker matches 1.. run data modify storage spawner_tweaker:temp BSE set from storage spawner_tweaker:temp Checking
 
 #Fix this list by removing spawners outside of range
-execute if score $prime_range spawner_tweaker matches 1.. store result score x temp run data get entity @s Pos[0]
-execute if score $prime_range spawner_tweaker matches 1.. store result score y temp run data get entity @s Pos[1]
-execute if score $prime_range spawner_tweaker matches 1.. store result score z temp run data get entity @s Pos[2]
-execute if score $prime_range spawner_tweaker matches 1.. run function spawner_tweaker:spawner_priming/range_checker
+execute if score $modification_range spawner_tweaker matches 1.. store result score x temp run data get entity @s Pos[0]
+execute if score $modification_range spawner_tweaker matches 1.. store result score y temp run data get entity @s Pos[1]
+execute if score $modification_range spawner_tweaker matches 1.. store result score z temp run data get entity @s Pos[2]
+execute if score $modification_range spawner_tweaker matches 1.. run function spawner_tweaker:spawner_priming/range_checker
 
 #Get spawner counts
 scoreboard players set spawners_updated st_priming 0
@@ -53,9 +55,6 @@ execute store result score total_spawners st_priming if data storage spawner_twe
 scoreboard players set n temp 0
 data modify storage spawner_tweaker:temp BSE[0].n set value 0
 data modify storage spawner_tweaker:temp BSE[0].next set value 1
-data modify storage spawner_tweaker:temp BSE[0].x set from storage spawner_tweaker:temp BSE[0].Pos[0]
-data modify storage spawner_tweaker:temp BSE[0].y set from storage spawner_tweaker:temp BSE[0].Pos[1]
-data modify storage spawner_tweaker:temp BSE[0].z set from storage spawner_tweaker:temp BSE[0].Pos[2]
 function spawner_tweaker:bulk_edit/load_checker with storage spawner_tweaker:temp BSE[0]
 
 #Flags

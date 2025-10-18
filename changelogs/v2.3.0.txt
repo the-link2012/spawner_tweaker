@@ -1,0 +1,15 @@
+Improvements from the previous version (Spawner Tweaker v2.2.2 for 1.21.5-1.21.10):
+
+Features:
+-Now works up to minecraft 1.21.10
+
+QOL:
+-Spawner ids no longer show up when tweaker is disabled
+-Removed tweaker loading message on /reload and login
+
+Bugs:
+-Fixed bug with volume markers showing up at times they shouldn't
+-Reconfigured the datapack to fix the minecraft duplicate coordinate bug
+
+TODO in future version updates:
+Add new blocks to raycast and containers lists - 1.21.9 blocks

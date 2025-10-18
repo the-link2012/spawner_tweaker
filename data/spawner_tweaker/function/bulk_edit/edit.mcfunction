@@ -45,7 +45,7 @@ execute if score $st_ongoing_process temp matches 2 run data modify block ~ ~ ~ 
 #Remove Data if the spawner isn't there
 scoreboard players set remove temp 0
 execute unless block ~ ~ ~ spawner run scoreboard players set remove temp 1
-$execute if score remove temp matches 1.. run data remove storage spawner_tweaker:temp Spawners[{dimension:"$(dimension)",Pos:$(Pos)}]
+$execute if score remove temp matches 1.. run data remove storage spawner_tweaker:temp Spawners[{dimension:"$(dimension)",x:$(x),y:$(y),z:$(z)}]
 
 #Bells and wistles
 execute if score force_load temp matches 0 positioned ~ ~ ~ align xyz run summon item_display ~0.499 ~0.499 ~0.499 {Tags:["st_primer"],Glowing:1b,width:100f,height:100f,interpolation_duration:2,teleport_duration:2,brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.02f,1.02f,1.02f]},item:{id:"minecraft:tinted_glass",count:1b}}

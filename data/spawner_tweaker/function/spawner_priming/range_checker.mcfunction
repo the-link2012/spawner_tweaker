@@ -1,16 +1,16 @@
 #Get range of spawner
-execute store result score x1 temp run data get storage spawner_tweaker:temp Checking[0].Pos[0]
-execute store result score y1 temp run data get storage spawner_tweaker:temp Checking[0].Pos[1]
-execute store result score z1 temp run data get storage spawner_tweaker:temp Checking[0].Pos[2]
+execute store result score x1 temp run data get storage spawner_tweaker:temp Checking[0].x
+execute store result score y1 temp run data get storage spawner_tweaker:temp Checking[0].y
+execute store result score z1 temp run data get storage spawner_tweaker:temp Checking[0].z
 scoreboard players operation x2 temp = x1 temp
 scoreboard players operation y2 temp = y1 temp
 scoreboard players operation z2 temp = z1 temp
-scoreboard players operation x1 temp -= $prime_range spawner_tweaker
-scoreboard players operation y1 temp -= $prime_range spawner_tweaker
-scoreboard players operation z1 temp -= $prime_range spawner_tweaker
-scoreboard players operation x2 temp += $prime_range spawner_tweaker
-scoreboard players operation y2 temp += $prime_range spawner_tweaker
-scoreboard players operation z2 temp += $prime_range spawner_tweaker
+scoreboard players operation x1 temp -= $modification_range spawner_tweaker
+scoreboard players operation y1 temp -= $modification_range spawner_tweaker
+scoreboard players operation z1 temp -= $modification_range spawner_tweaker
+scoreboard players operation x2 temp += $modification_range spawner_tweaker
+scoreboard players operation y2 temp += $modification_range spawner_tweaker
+scoreboard players operation z2 temp += $modification_range spawner_tweaker
 
 #Compare to player's position and write if success
 scoreboard players set pass temp 0

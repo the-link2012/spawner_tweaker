@@ -1,7 +1,7 @@
 #Primes the spawner 
 
 #Update the records
-$execute store result storage spawner_tweaker:temp Spawners[{dimension:"$(dimension)",Pos:$(Pos)}].id int 1 run scoreboard players get id_new st_priming
+$execute store result storage spawner_tweaker:temp Spawners[{dimension:"$(dimension)",x:$(x),y:$(y),z:$(z)}].id int 1 run scoreboard players get id_new st_priming
 
 #Read the current light levels
 data modify storage spawner_tweaker:temp spawner set value {}
@@ -40,7 +40,7 @@ execute if score $st_ongoing_process temp matches 2 run data modify block ~ ~ ~ 
 #Remove Data if the spawner isn't there
 scoreboard players set remove temp 0
 execute unless block ~ ~ ~ spawner run scoreboard players set remove temp 1
-$execute if score remove temp matches 1.. run data remove storage spawner_tweaker:temp Spawners[{dimension:"$(dimension)",Pos:$(Pos)}]
+$execute if score remove temp matches 1.. run data remove storage spawner_tweaker:temp Spawners[{dimension:"$(dimension)",x:$(x),y:$(y),z:$(z)}]
 
 #Killing old displays
 execute align xyz positioned ~0.5 ~0.8 ~0.5 run kill @e[distance=..1,limit=1,sort=nearest,tag=st_id_display]

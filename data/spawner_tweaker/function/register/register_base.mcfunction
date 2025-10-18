@@ -21,8 +21,10 @@ execute if score scuffed_light temp matches 1 if data block ~ ~ ~ SpawnPotential
 
 #Getting the relevant positioning information
 summon marker ~ ~ ~ {UUID:[I;-1549706688,1223903313,-1879781877,1584575981]}
-data modify storage spawner_tweaker:temp Spawner set value {Pos:[0.0d,0.0d,0.0d],dimension:"minecraft:overworld"}
-data modify storage spawner_tweaker:temp Spawner.Pos set from entity a3a15a40-48f3-4851-8ff4-ce0b5e72b5ed Pos
+data modify storage spawner_tweaker:temp Spawner set value {x:0,y:0,z:0,dimension:"minecraft:overworld"}
+data modify storage spawner_tweaker:temp Spawner.x set from entity a3a15a40-48f3-4851-8ff4-ce0b5e72b5ed Pos[0]
+data modify storage spawner_tweaker:temp Spawner.y set from entity a3a15a40-48f3-4851-8ff4-ce0b5e72b5ed Pos[1]
+data modify storage spawner_tweaker:temp Spawner.z set from entity a3a15a40-48f3-4851-8ff4-ce0b5e72b5ed Pos[2]
 data modify storage spawner_tweaker:temp Spawner.dimension set from entity @s Dimension
 kill a3a15a40-48f3-4851-8ff4-ce0b5e72b5ed
 
@@ -78,6 +80,10 @@ execute if score exists temp matches 1 if score not_new temp matches 1 if entity
 #If a spawner is here, but it just needs an updated id, do that.
 execute if score exists temp matches 1 if score not_new temp matches 0 run function spawner_tweaker:spawner_priming/prune with storage spawner_tweaker:temp Spawner
 execute if score exists temp matches 1 if score not_new temp matches 0 run data modify storage spawner_tweaker:temp Spawners prepend from storage spawner_tweaker:temp Spawner
+
+
+#Skip making the display if the player has tweaker disabled
+execute if entity @s[tag=st_disabled] run return 1
 
 #Make the display
 function spawner_tweaker:register/get_id with storage spawner_tweaker:temp Spawner

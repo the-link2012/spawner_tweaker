@@ -2,8 +2,10 @@
 
 #Getting the relevant positioning information and setting up data storage
 summon marker ~ ~ ~ {UUID:[I;-44439381,467092815,-2143523091,-286623066]}
-data modify storage spawner_tweaker:temp Spawner set value {Pos:[0.0d,0.0d,0.0d],dimension:"minecraft:overworld"}
-data modify storage spawner_tweaker:temp Spawner.Pos set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos
+data modify storage spawner_tweaker:temp Spawner set value {x:0,y:0,z:0,dimension:"minecraft:overworld"}
+data modify storage spawner_tweaker:temp Spawner.x set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos[0]
+data modify storage spawner_tweaker:temp Spawner.y set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos[1]
+data modify storage spawner_tweaker:temp Spawner.z set from entity fd59e8ab-1bd7-454f-803c-6eedeeea7aa6 Pos[2]
 data modify storage spawner_tweaker:temp Spawner.dimension set from entity @s Dimension
 kill fd59e8ab-1bd7-454f-803c-6eedeeea7aa6
 

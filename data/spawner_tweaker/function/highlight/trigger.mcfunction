@@ -10,9 +10,6 @@ execute store result score $total_spawners temp if data storage spawner_tweaker:
 data modify storage spawner_tweaker:temp highlight set from storage spawner_tweaker:temp Spawners
 data modify storage spawner_tweaker:temp highlight[0].n set value 0
 data modify storage spawner_tweaker:temp highlight[0].next set value 1
-data modify storage spawner_tweaker:temp highlight[0].x set from storage spawner_tweaker:temp highlight[0].Pos[0]
-data modify storage spawner_tweaker:temp highlight[0].y set from storage spawner_tweaker:temp highlight[0].Pos[1]
-data modify storage spawner_tweaker:temp highlight[0].z set from storage spawner_tweaker:temp highlight[0].Pos[2]
 function spawner_tweaker:highlight/load_checker with storage spawner_tweaker:temp highlight[0]
 data remove storage spawner_tweaker:temp highlight[{loaded:0b}]
 
