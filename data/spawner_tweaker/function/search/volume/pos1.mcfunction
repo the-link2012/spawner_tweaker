@@ -2,7 +2,8 @@
 
 #failsafe
 execute if score $st_ongoing_process temp matches 1.. run tellraw @s {"color":"red","italic":false,"text":"You can't do this during an ongoing process"}
-execute if score $st_ongoing_process temp matches 1.. run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 1 1
+execute if score $st_ongoing_process temp matches 1.. at @s run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 1 1
+execute unless score $st_ongoing_process temp matches 1.. at @s run playsound minecraft:block.note_block.hat player @s ~ ~ ~ 1 1
 execute if score $st_ongoing_process temp matches 1.. run return 1
 
 #Store position
@@ -16,8 +17,8 @@ kill fd59e8ab-1bd7-454f-803c-6eedeeea7aa6
 function spawner_tweaker:search/volume/determine_volume
 
 #Tell ouput
-execute unless score $pos2_set st_volume matches 1.. run tellraw @s {"color":"yellow","text":"Position 1 set"}
-execute if score $pos2_set st_volume matches 1.. run function spawner_tweaker:search/volume/pos1_tell with storage spawner_tweaker:temp variables
+execute if score $pos2_set st_volume matches 99999999 run tellraw @s {"color":"yellow","text":"Position 1 set"}
+execute unless score $pos2_set st_volume matches 99999999 run function spawner_tweaker:search/volume/pos1_tell with storage spawner_tweaker:temp variables
 
 #Flags
 scoreboard players set $pos1_set st_volume 1

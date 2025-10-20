@@ -33,8 +33,9 @@ data modify storage spawner_tweaker:temp give.id set from storage spawner_tweake
 execute at @s run function spawner_tweaker:give_spawners/read_id with storage spawner_tweaker:temp give
 
 #Bells and wistles
-playsound minecraft:block.trial_spawner.spawn_mob master @s ~ ~ ~ 1 0.8
-playsound item.firecharge.use master @s ~ ~ ~ 0.8 0.5
+execute if score new_id_s spawner_tweaker_visuals matches 1.. run playsound minecraft:block.trial_spawner.spawn_mob master @s ~ ~ ~ 1 0.8
+execute if score new_id_s spawner_tweaker_visuals matches 1 run playsound item.firecharge.use master @s ~ ~ ~ 0.8 0.5
+execute if score new_id_s spawner_tweaker_visuals matches 2 run playsound minecraft:block.trial_spawner.ominous_activate master @s ~ ~ ~ 1 0.7
 
 scoreboard players set said_name temp 0
 execute if score said_name temp matches 0 run function spawner_tweaker:register/give_name_1 with storage spawner_tweaker:temp id
@@ -42,4 +43,6 @@ execute if score said_name temp matches 0 run function spawner_tweaker:register/
 
 scoreboard players set y temp -90
 scoreboard players set x temp 0
-execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 run function spawner_tweaker:register/register_particle_loop
+execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 if score new_id_p spawner_tweaker_visuals matches 1 run function spawner_tweaker:register/register_particle_loop
+execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 if score new_id_p spawner_tweaker_visuals matches 2 run function spawner_tweaker:chests/register/register_particle_loop
+execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 if score new_id_p spawner_tweaker_visuals matches 3 run particle flash ~ ~ ~ 0 0 0 2 1 force

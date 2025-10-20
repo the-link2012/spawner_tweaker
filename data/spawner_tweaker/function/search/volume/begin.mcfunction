@@ -7,8 +7,8 @@ function spawner_tweaker:search/volume/determine_volume
 #Fail conditions
 scoreboard players set fail temp 0
 execute if score $st_ongoing_process temp matches 1.. run scoreboard players set fail temp 1
-execute if score $pos1_set st_volume matches 0 run scoreboard players set fail temp 2
-execute if score $pos2_set st_volume matches 0 run scoreboard players set fail temp 2
+execute if score $pos1_set st_volume matches 99999999 run scoreboard players set fail temp 2
+execute if score $pos2_set st_volume matches 99999999 run scoreboard players set fail temp 2
 execute if score time_s st_volume matches 300.. run scoreboard players set fail temp 3
 
 execute if score fail temp matches 1 run tellraw @s {"color":"red","italic":false,"text":"Please wait for the current process to finish."}

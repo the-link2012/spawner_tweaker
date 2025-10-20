@@ -1,0 +1,6 @@
+#Flashes the tutorial for the player
+playsound block.note_block.pling master @s[tag=st_init_3] ~ ~ ~ 1 1.5
+
+tellraw @s {"bold":true,"underlined":true,"color":"yellow","text":"\nTweaking Tutorial\n"}
+tellraw @s [{"color":"yellow","text":"Look at a spawner with a spawner in your hand to open its settings & info. Right or left click to modify values, shift right or left click to scroll through the menu.\n\nHolding down shift allows placing spawners without pulling up the tweaking menu. Looking at a new spawner while tweaking will switch the selection. Selecting another spawner while holding shift will allow you to select mutltiple spawners to edit at once.\n\nYou may type the command "},{"click_event":{"action":"copy_to_clipboard","value":"/trigger spawner_tweaker_menu set"},"color":"gray","hover_event":{"action":"show_text","value":[{"text":"Click to copy","color":"gray"}]},"text":"/trigger spawner_tweaker_menu"}," at any time to access spawner tweaker's additional settings and functions.\n"]
+tellraw @s [{"color":"gray","text":"⮨ "},{"color":"dark_gray","text":"["},{"click_event":{"action":"run_command","command":"/trigger spawner_tweaker_menu set 5"},"color":"gray","hover_event":{"action":"show_text","value":[{"text":"Click to go back to the previous menu","color":"gray"}]},"text":"Go back"},{"color":"dark_gray","text":"]"}]

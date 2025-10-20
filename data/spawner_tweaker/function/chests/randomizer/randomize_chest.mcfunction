@@ -4,7 +4,7 @@
 data remove block ~ ~ ~ Items
 data remove block ~ ~ ~ LootTable
 
-execute if data block ~ ~ ~ LootTable run function spawner_tweaker:chests/randomizer/i_hate_mojang1
+#execute if data block ~ ~ ~ LootTable run function spawner_tweaker:chests/randomizer/i_hate_mojang1
 
 #Generate new contents
 $data modify block ~ ~ ~ Items set from storage spawner_tweaker:temp container_randomizer[$(n)].contents_source.Items

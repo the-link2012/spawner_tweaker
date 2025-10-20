@@ -17,3 +17,8 @@ scoreboard players reset current_z st_volume
 #kill 18c359ed-00ca-4242-9e49-91cd8846f33a
 #scoreboard players set $pos1_set st_volume 0
 #scoreboard players set $pos2_set st_volume 0
+
+#Fix visuals of volume
+execute unless score $st_ongoing_process temp matches 4 run kill 18c359ed-00ca-4242-9e49-91cd8846f33a
+execute unless score $st_ongoing_process temp matches 4 run scoreboard players set $pos1_set st_volume 99999999
+execute unless score $st_ongoing_process temp matches 4 run scoreboard players set $pos2_set st_volume 99999999

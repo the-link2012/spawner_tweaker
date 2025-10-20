@@ -68,9 +68,11 @@ execute if score exists temp matches 0 if score register_new temp matches 1 run 
 execute store result storage spawner_tweaker:temp Spawner.id int 1 run scoreboard players get id temp
 execute if score exists temp matches 0 run function spawner_tweaker:spawner_priming/prune with storage spawner_tweaker:temp Spawner
 execute if score exists temp matches 0 run data modify storage spawner_tweaker:temp Spawners prepend from storage spawner_tweaker:temp Spawner
-execute if score exists temp matches 0 if score not_new temp matches 0 run particle minecraft:trial_spawner_detection ~ ~ ~ 0.7 0.7 0.7 0 20 force @s
-execute if score exists temp matches 0 if score not_new temp matches 0 run particle minecraft:trial_spawner_detection ~ ~ ~ 0.7 0.7 0.7 0 20 normal @s
-execute if score exists temp matches 0 if score not_new temp matches 0 run playsound minecraft:block.trial_spawner.detect_player master @s ~ ~ ~ 1 0.8
+execute if score exists temp matches 0 if score not_new temp matches 0 if score register_p spawner_tweaker_visuals matches 1 run particle minecraft:trial_spawner_detection ~ ~ ~ 0.7 0.7 0.7 0 20 force @s
+execute if score exists temp matches 0 if score not_new temp matches 0 if score register_p spawner_tweaker_visuals matches 1 run particle minecraft:trial_spawner_detection ~ ~ ~ 0.7 0.7 0.7 0 20 normal @s
+execute if score exists temp matches 0 if score not_new temp matches 0 if score register_p spawner_tweaker_visuals matches 2 run particle minecraft:trial_spawner_detection_ominous ~ ~ ~ 0.7 0.7 0.7 0 20 force @s
+execute if score exists temp matches 0 if score not_new temp matches 0 if score register_p spawner_tweaker_visuals matches 2 run particle minecraft:trial_spawner_detection_ominous ~ ~ ~ 0.7 0.7 0.7 0 20 normal @s
+execute if score exists temp matches 0 if score not_new temp matches 0 if score register_s spawner_tweaker_visuals matches 1 run playsound minecraft:block.trial_spawner.detect_player master @s ~ ~ ~ 1 0.8
 execute if score exists temp matches 0 run scoreboard players set spawner_found temp 1
 
 #If a spawner here exists, and this is a new id, ask if it ought to be registered

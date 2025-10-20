@@ -18,6 +18,7 @@ execute if score chest_pass temp matches 0 run return 1
 data modify storage spawner_tweaker:temp Chests append from storage spawner_tweaker:temp Pos
 scoreboard players set y temp -90
 scoreboard players set x temp 0
-playsound minecraft:block.chest.open master @a ~ ~ ~ 1 0.8
-playsound item.firecharge.use master @s ~ ~ ~ 0.8 0.5
-execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 run function spawner_tweaker:chests/register/register_particle_loop
+execute if score container_s spawner_tweaker_visuals matches 1 run playsound minecraft:block.chest.open master @a ~ ~ ~ 1 1.5
+execute if score container_s spawner_tweaker_visuals matches 2 run playsound minecraft:entity.breeze.deflect master @s ~ ~ ~ 0.7 0.5
+execute if score container_p spawner_tweaker_visuals matches 1 run particle flash ~ ~ ~ 0 0 0 0.5 1 force
+execute if score container_p spawner_tweaker_visuals matches 2 align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 run function spawner_tweaker:chests/register/wax_particle_loop
