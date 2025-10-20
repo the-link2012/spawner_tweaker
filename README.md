@@ -22,7 +22,7 @@ Alternatively, drop your spawner while tweaking the spawner you wish to modify. 
 ### Options
 All options and additional functions have been moved to the in-game menu. Feel free to type `/trigger spawner_tweaker_menu` to access these options, functions, and documentation. Additional features will be added upon request. <br>
 
-### Spawner and Chest Randomizer
+## Spawner and Chest Randomizer
 **ALWAYS MAKE BACKUPS WHEN USING RANDOMIZERS**<br>
 Spawner Tweaker comes with randomizer capabilities. Randomized spawners have their potentials and SpawnData randomized, but not other aspects such as player range, delay, and count. Container (chest) randomization swaps the contents or loot tables of all registered containers. Containers register into the system just as spawners do--either passively while looking around or by running volume checks.<br>
 Before using the randomizer, make sure you first:<br>
@@ -45,7 +45,7 @@ Cubical range centered on yourself to remove chests from the chest id system. Us
 Known limitations:<br>
 Randomized containers that had loot tables will cause block updates. This is because mojang doesn't allow /data remove on block loot tables.<br>
 
-### Reuse and Contact
+## Reuse and Contact
 Feel free to use, modify, and distribute. This datapack is by link2012.<br>
 Latest version at https://github.com/the-link2012/spawner_tweaker<br>
 The pack is low impact so it is fine to keep in published maps.
