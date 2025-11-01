@@ -9,6 +9,7 @@ scoreboard players set random_timer st_priming 0
 scoreboard players set chests_randomized st_priming -1
 scoreboard players set chests_checked st_priming -1
 scoreboard players set $st_ongoing_process temp 0
+scoreboard players set chest_random_timer st_priming 0
 
 #Killing displays
 execute if entity @e[tag=st_primer,type=item_display,limit=1] run schedule function spawner_tweaker:spawner_priming/kill_displays 1t

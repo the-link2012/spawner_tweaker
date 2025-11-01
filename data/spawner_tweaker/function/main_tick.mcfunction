@@ -14,6 +14,7 @@ execute if score volume_timer st_priming matches 1.. run function spawner_tweake
 execute if score transform_timer st_priming matches 1.. run function spawner_tweaker:transform/tick
 execute if score random_timer st_priming matches 1.. run function spawner_tweaker:randomizer/tick
 execute if score chest_random_timer st_priming matches 1.. run function spawner_tweaker:chests/randomizer/tick
+execute if score function_timer st_priming matches 1.. run function spawner_tweaker:run_function/tick
 
 #Failsafes
 scoreboard players set @a st_drop_spawner 0

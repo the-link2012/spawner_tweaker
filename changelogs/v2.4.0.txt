@@ -1,0 +1,14 @@
+Improvements from the previous version (Spawner Tweaker v2.3.0 for 1.21.5-1.21.10):
+
+Features:
+-Added a function that allows you to execute arbitrary commands at spawners
+ -May be used to test for specific conditions around the spawner (execute if)
+ -May be limited to a radius
+ -May be limited to a specific spawner id
+ -You may specify how long the visual indicator lasts (if at all)
+
+Bugs:
+-Fixed a backend bug where the chest randomizer timer would infinitely count up
+
+TODO in future version updates:
+Add new blocks to raycast and containers lists - 1.21.9 blocks

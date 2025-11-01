@@ -70,10 +70,14 @@ scoreboard players set 1000 numbers 1000
 team add spawner_tweaker_gray {"text":"Gray","color":"gray","bold":false,"italic":false,"underlined":false}
 team add spawner_tweaker_dark_gray {"text":"Dark Gray","color":"dark_gray","bold":false,"italic":false,"underlined":false}
 team add spawner_tweaker_green {"text":"Green","color":"green","bold":false,"italic":false,"underlined":false}
+team add spawner_tweaker_dark_green {"text":"Dark Green","color":"dark_green","bold":false,"italic":false,"underlined":false}
 team add spawner_tweaker_red {"text":"Red","color":"red","bold":false,"italic":false,"underlined":false}
-team add spawner_tweaker_yellow {"text":"Yellow","color":"red","bold":false,"italic":false,"underlined":false}
+team add spawner_tweaker_dark_red {"text":"Dark Red","color":"dark_red","bold":false,"italic":false,"underlined":false}
+team add spawner_tweaker_yellow {"text":"Yellow","color":"yellow","bold":false,"italic":false,"underlined":false}
 team modify spawner_tweaker_green color green
+team modify spawner_tweaker_dark_green color dark_green
 team modify spawner_tweaker_red color red
+team modify spawner_tweaker_dark_red color dark_red
 team modify spawner_tweaker_yellow color yellow
 team modify spawner_tweaker_gray color gray
 team modify spawner_tweaker_dark_gray color dark_gray
