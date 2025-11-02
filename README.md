@@ -1,7 +1,4 @@
-This datapack currently works for minecraft 1.21.5-1.21.10. For legacy versions and backports, view branches on the repository.<br>
-**NOTE:** If your map was 1.21.4 or below and used Spawner Tweaker, you will need to re-register spawners or update most ids due to major minecraft nbt reworks. When re-registering, use these commands to reset the data storage:<br>
-`/data remove storage spawner_tweaker:temp Ids`<br>
-`/data remove storage spawner_tweaker:temp Spawners`<br>
+This datapack currently works for minecraft 1.21.9-1.21.10. For legacy versions and backports, view branches on the repository.<br>
 
 ## How To Use
 Look at a spawner with a spawner in your hand to open its settings & info. Right or left click to modify values, shift right or left click to scroll through the menu.<br>
