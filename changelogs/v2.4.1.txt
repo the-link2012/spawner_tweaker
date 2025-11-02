@@ -1,0 +1,4 @@
+Improvements from the previous version (Spawner Tweaker v2.4.0 for 1.21.5-1.21.10):
+
+Bugs:
+-Limited the version to 1.21.8, new bugs emerged that require branching versions
