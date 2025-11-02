@@ -20,5 +20,5 @@ scoreboard players set y temp -90
 scoreboard players set x temp 0
 execute if score container_s spawner_tweaker_visuals matches 1 run playsound minecraft:block.chest.open master @a ~ ~ ~ 1 1.5
 execute if score container_s spawner_tweaker_visuals matches 2 run playsound minecraft:entity.breeze.deflect master @s ~ ~ ~ 0.7 0.5
-execute if score container_p spawner_tweaker_visuals matches 1 run particle flash ~ ~ ~ 0 0 0 0.5 1 force
+execute if score container_p spawner_tweaker_visuals matches 1 run particle flash{color:[0.722,0.494,0.043,0.10]} ~ ~ ~ 0 0 0 0.5 1 force
 execute if score container_p spawner_tweaker_visuals matches 2 align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 run function spawner_tweaker:chests/register/wax_particle_loop

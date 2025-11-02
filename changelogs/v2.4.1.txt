@@ -1,0 +1,8 @@
+Improvements from the previous version (Spawner Tweaker v2.4.0 for 1.21.5-1.21.10):
+
+Bugs:
+-Split this version of tweaker as it resulted in bugs for 1.21.9+
+-Updated particle format for 1.21.9
+
+QOL:
+-Added new raytracable blocks and containers for 1.21.9+
