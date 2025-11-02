@@ -45,4 +45,4 @@ scoreboard players set y temp -90
 scoreboard players set x temp 0
 execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 if score new_id_p spawner_tweaker_visuals matches 1 run function spawner_tweaker:register/register_particle_loop
 execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 if score new_id_p spawner_tweaker_visuals matches 2 run function spawner_tweaker:chests/register/register_particle_loop
-execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 if score new_id_p spawner_tweaker_visuals matches 3 run particle flash ~ ~ ~ 0 0 0 2 1 force
+execute align xyz positioned ~0.5 ~0.5 ~0.5 rotated 0 -90 if score new_id_p spawner_tweaker_visuals matches 3 run particle flash{color:[1.000,1.000,1.000,1.00]} ~ ~ ~ 0 0 0 2 1 force
