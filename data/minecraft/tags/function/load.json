@@ -1,5 +1,7 @@
 {
   "values":[
-    "spawner_tweaker:load"
+    "spawner_tweaker:load",
+    "additional_features:main/load",
+    "additional_features:main/scoreboard"
   ]
 }
