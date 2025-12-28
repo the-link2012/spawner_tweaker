@@ -83,5 +83,5 @@ team modify spawner_tweaker_gray color gray
 team modify spawner_tweaker_dark_gray color dark_gray
 
 #Gamerules
-gamerule maxCommandForkCount 2147483647
-gamerule maxCommandChainLength 2147483647
+gamerule max_command_forks 2147483647
+gamerule max_command_sequence_length 2147483647

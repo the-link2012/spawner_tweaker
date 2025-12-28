@@ -1,0 +1,7 @@
+Improvements from the previous version (Spawner Tweaker v2.4.1 for 1.21.9-1.21.10):
+
+Features:
+-Datapack works for 1.21.11
+
+Bugs:
+-Fixed placeholder text in several menu options
