@@ -5,7 +5,7 @@ summon item_display ~ ~ ~ {Tags:["st_display","st_glass","st_uninitialized"],Glo
 team join spawner_tweaker_green @e[limit=1,sort=nearest,distance=..1,tag=st_glass,tag=st_uninitialized]
 
 #Extra display for spawner range
-execute if entity @s[tag=!st_disable_box] run summon block_display ~ ~ ~ {Tags:["st_display","st_box","st_uninitialized"],view_range:100f,width:100f,height:100f,teleport_duration:12,brightness:{sky:15,block:15},transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],block_state:{Name:"minecraft:red_stained_glass"}}
+execute if entity @s[tag=!st_disable_box] run summon block_display ~ ~ ~ {Tags:["st_display","st_box","st_uninitialized"],view_range:100f,width:100f,height:100f,teleport_duration:12,brightness:{sky:15,block:15},transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],block_state:{id:"minecraft:red_stained_glass"}}
 
 #Displays for radius
 execute if entity @s[tag=!st_disable_horizontal] run summon text_display ~ ~ ~ {Glowing:1b,view_range:100f,width:100f,height:100f,billboard:"vertical",start_interpolation:-1,interpolation_duration:2,teleport_duration:12,text_opacity:120,Rotation:[0F,-90F],Tags:["st_display","st_radius_x","st_radius","st_uninitialized"],brightness:{sky:15,block:15},transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],text:{"color":"red","italic":false,"text":"⬤"},background:16711680}
