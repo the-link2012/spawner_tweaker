@@ -1,0 +1,8 @@
+Improvements from the previous version (Spawner Tweaker v2.4.2 for 1.21.11):
+
+Features:
+-Datapack works for 26.3
+
+Note:
+I am skipping 26.1-26.2 because of the Minecraft spawner light level bug in those versions.
+Map in those versions at your own peril, I won't be making a specific version of Tweaker for them.
