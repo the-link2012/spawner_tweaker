@@ -1,4 +1,4 @@
-This datapack currently works for minecraft 1.21.9-1.21.10. For legacy versions and backports, view branches on the repository.<br>
+This datapack currently works for minecraft 1.21.9-26.3. For legacy versions and backports, view branches on the repository.<br>
 
 ## How To Use
 Look at a spawner with a spawner in your hand to open its settings & info. Right or left click to modify values, shift right or left click to scroll through the menu.<br>
