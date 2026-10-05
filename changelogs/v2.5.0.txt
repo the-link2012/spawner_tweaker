@@ -1,0 +1,12 @@
+Improvements from the previous version (Spawner Tweaker v2.4.3 for 26.3):
+
+Features:
+-Added the ability to highlight containers
+
+Bugs:
+-Fixed z-fighting issues with highlighting spawners
+-Fixed name display issue with give all barrels
+-Fixed several menu visual bugs (uninended aesthetics)
+
+QOL:
+-Updated raytracable blocks for the latest version

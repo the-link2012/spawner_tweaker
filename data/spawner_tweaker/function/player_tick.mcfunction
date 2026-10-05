@@ -17,6 +17,7 @@ execute if score @s give_spawner matches -999.. run function spawner_tweaker:giv
 execute if score @s delete_spawner_id matches 0.. store result storage spawner_tweaker:temp variables.id int 1 run scoreboard players get @s delete_spawner_id
 execute if score @s delete_spawner_id matches 0.. run function spawner_tweaker:register/remove_id with storage spawner_tweaker:temp variables
 execute if score @s highlight_spawners matches 1.. run function spawner_tweaker:highlight/trigger
+execute if score @s highlight_containers matches 1.. run function spawner_tweaker:highlight/trigger_containers
 execute if score @s prime_spawners matches -998.. run function spawner_tweaker:spawner_priming/initiate
 execute if score @s delete_nearby_chests matches 1.. run function spawner_tweaker:chests/delete/trigger
 

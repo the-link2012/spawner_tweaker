@@ -11,7 +11,7 @@ execute store result storage spawner_tweaker:temp give.id int 1 run scoreboard p
 function spawner_tweaker:give_spawners/read_id with storage spawner_tweaker:temp give
 
 #Create a barrel if there is none
-$execute positioned ~ ~$(y) ~ unless block ~ ~ ~ barrel run setblock ~ ~ ~ barrel[facing=up]{CustomName:'"Spawner Tweaker Spawners"'} replace
+$execute positioned ~ ~$(y) ~ unless block ~ ~ ~ barrel run setblock ~ ~ ~ barrel[facing=up]{CustomName:'Spawner Tweaker Spawners'} replace
 
 #Insert the item and kill it
 data modify storage spawner_tweaker:temp give_all.item set value {Slot:0b}

@@ -22,6 +22,7 @@ scoreboard objectives add spawner_tweaker_setting dummy
 scoreboard objectives add spawner_tweaker_menu trigger
 scoreboard objectives add prime_spawners dummy
 scoreboard objectives add highlight_spawners dummy
+scoreboard objectives add highlight_containers dummy
 scoreboard objectives add give_spawner dummy
 scoreboard objectives add delete_spawner_id dummy
 scoreboard objectives add delete_nearby_chests dummy
@@ -74,6 +75,7 @@ team add spawner_tweaker_dark_green {"text":"Dark Green","color":"dark_green","b
 team add spawner_tweaker_red {"text":"Red","color":"red","bold":false,"italic":false,"underlined":false}
 team add spawner_tweaker_dark_red {"text":"Dark Red","color":"dark_red","bold":false,"italic":false,"underlined":false}
 team add spawner_tweaker_yellow {"text":"Yellow","color":"yellow","bold":false,"italic":false,"underlined":false}
+team add spawner_tweaker_gold {"text":"Gold","color":"gold","bold":false,"italic":false,"underlined":false}
 team modify spawner_tweaker_green color green
 team modify spawner_tweaker_dark_green color dark_green
 team modify spawner_tweaker_red color red
@@ -81,6 +83,7 @@ team modify spawner_tweaker_dark_red color dark_red
 team modify spawner_tweaker_yellow color yellow
 team modify spawner_tweaker_gray color gray
 team modify spawner_tweaker_dark_gray color dark_gray
+team modify spawner_tweaker_gold color gold
 
 #Gamerules
 gamerule max_command_forks 2147483647
