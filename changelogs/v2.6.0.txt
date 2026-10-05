@@ -1,0 +1,10 @@
+Improvements from the previous version (Spawner Tweaker v2.5.0 for 26.3):
+
+Features:
+-Added a system that detects excess light around spawners and warns the tweaker
+ -On by default, displays when within the spawner range
+ -Options for a particle, block display, or disable
+ -Limited to checking 1,000 blocks per spawner when active (this system isn't cheap, but should be lightweight for 90% of areas)
+
+Bugs:
+-Fixed a bug where the spawn box was not turning grey when the player left the radius

@@ -61,6 +61,7 @@ scoreboard players set setup spawner_tweaker 10
 
 scoreboard players set -1 numbers -1
 scoreboard players set 2 numbers 2
+scoreboard players set 3 numbers 3
 scoreboard players set 5 numbers 5
 scoreboard players set 10 numbers 10
 scoreboard players set 20 numbers 20

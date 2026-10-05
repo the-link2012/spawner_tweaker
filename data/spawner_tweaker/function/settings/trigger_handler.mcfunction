@@ -26,8 +26,10 @@ execute if score @s spawner_tweaker_menu matches 32 run function spawner_tweaker
 execute if score @s spawner_tweaker_menu matches 33 run function spawner_tweaker:settings/cosmetics/radius_horizontal
 execute if score @s spawner_tweaker_menu matches 34 run function spawner_tweaker:settings/cosmetics/radius_all
 execute if score @s spawner_tweaker_menu matches 35 run function spawner_tweaker:settings/cosmetics/radius_none
-execute if score @s spawner_tweaker_menu matches 36 run function spawner_tweaker:settings/cosmetics/box_on
-execute if score @s spawner_tweaker_menu matches 37 run function spawner_tweaker:settings/cosmetics/box_off
+execute if score @s spawner_tweaker_menu matches 36 run function spawner_tweaker:settings/cosmetics/box_toggle
+execute if score @s spawner_tweaker_menu matches 37 run function spawner_tweaker:settings/cosmetics/light_box
+execute if score @s spawner_tweaker_menu matches 38 run function spawner_tweaker:settings/cosmetics/light_particle
+execute if score @s spawner_tweaker_menu matches 39 run function spawner_tweaker:settings/cosmetics/light_off
 
 execute if score @s spawner_tweaker_menu matches 40 run function spawner_tweaker:settings/cosmetics/new_id_p_1
 execute if score @s spawner_tweaker_menu matches 41 run function spawner_tweaker:settings/cosmetics/new_id_p_2

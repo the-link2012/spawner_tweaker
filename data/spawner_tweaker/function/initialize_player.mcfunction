@@ -8,6 +8,7 @@ scoreboard players set @s[tag=!st_init_3] delete_spawner_id -1
 scoreboard players set @s[tag=!st_init_3] spawner_tweaker_menu 0
 scoreboard players add @s[tag=!st_init_3] delete_nearby_chests 0
 scoreboard players add @s[tag=!st_init_3] highlight_spawners 0
+tag @s[tag=!st_init_3] add st_light_box
 
 #Welcome message
 playsound minecraft:block.trial_spawner.spawn_item_begin master @s ~ ~ ~ 1 1

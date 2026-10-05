@@ -20,10 +20,16 @@ execute store result score temp temp run data get storage spawner_tweaker:temp s
 scoreboard players add temp temp 1
 execute store result storage spawner_tweaker:temp spawner.SpawnVolume float 1.001 run scoreboard players get temp temp
 execute store result storage spawner_tweaker:temp spawner.HalfSpawnVolume float 0.5001 run scoreboard players get temp temp
-execute unless entity @s[tag=st_player_near] as @e[limit=1,sort=nearest,distance=..1,tag=st_box] run data modify entity @s block_state.id set value "minecraft:gray_stained_glass"
-execute if entity @s[tag=st_player_near] as @e[limit=1,sort=nearest,distance=..1,tag=st_box] run data modify entity @s block_state.id set value "minecraft:red_stained_glass"
+execute unless entity @s[tag=st_player_near] as @e[limit=1,sort=nearest,distance=..1,tag=st_box] run data modify entity @s block_state set value "minecraft:gray_stained_glass"
+execute if entity @s[tag=st_player_near] as @e[limit=1,sort=nearest,distance=..1,tag=st_box] run data modify entity @s block_state set value "minecraft:red_stained_glass"
 execute store result storage spawner_tweaker:temp spawner.height float 0.0001 run scoreboard players get @s spawner_tweaker_offset
 execute as @e[limit=1,sort=nearest,distance=..1,tag=st_box] run function spawner_tweaker:spawner_tweaking/spawn_area with storage spawner_tweaker:temp spawner
+
+#Light visualization
+execute store result score box_size temp run data get storage spawner_tweaker:temp spawner.SpawnRange 2
+execute if score box_size temp matches ..0 run scoreboard players set box_size temp 0
+execute store result storage spawner_tweaker:temp spawner.box_size int 1 run scoreboard players add box_size temp 1
+execute if entity @s[tag=st_player_near,tag=!st_light_off] if score $st_5hz_timer temp matches 1 run function spawner_tweaker:spawner_tweaking/light/enter_loop with storage spawner_tweaker:temp spawner
 
 #Radius display
 execute store result score temp temp run data get storage spawner_tweaker:temp spawner.RequiredPlayerRange 1200

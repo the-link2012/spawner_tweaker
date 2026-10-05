@@ -22,3 +22,5 @@ scoreboard players set @a st_drop_spawner 0
 #Visualizing volumes
 scoreboard players add $st_1s_timer temp 1
 execute if score $st_1s_timer temp matches 20.. run function spawner_tweaker:search/volume/visualize
+scoreboard players add $st_5hz_timer temp 1
+execute if score $st_5hz_timer temp matches 4.. run scoreboard players set $st_5hz_timer temp 0

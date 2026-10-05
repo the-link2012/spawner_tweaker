@@ -3,6 +3,9 @@
 #Main rotating glass display
 summon item_display ~ ~ ~ {Tags:["st_display","st_glass","st_uninitialized"],Glowing:1b,width:100f,height:100f,interpolation_duration:5,teleport_duration:11,brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.01f,1.01f,1.01f]},item:{id:"minecraft:glass",count:1b}}
 team join spawner_tweaker_green @e[limit=1,sort=nearest,distance=..1,tag=st_glass,tag=st_uninitialized]
+execute if entity @s[tag=st_light_box] run tag @e[distance=..0.1,tag=st_uninitialized] add st_light_box
+execute if entity @s[tag=st_light_particle] run tag @e[distance=..0.1,tag=st_uninitialized] add st_light_particle
+execute if entity @s[tag=st_light_off] run tag @e[distance=..0.1,tag=st_uninitialized] add st_light_off
 
 #Extra display for spawner range
 execute if entity @s[tag=!st_disable_box] run summon block_display ~ ~ ~ {Tags:["st_display","st_box","st_uninitialized"],view_range:100f,width:100f,height:100f,teleport_duration:12,brightness:{sky:15,block:15},transformation:[0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,0.1f,0f,0f,0f,0f,1f],block_state:{id:"minecraft:red_stained_glass"}}
