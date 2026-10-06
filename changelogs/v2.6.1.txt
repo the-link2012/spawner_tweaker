@@ -1,0 +1,4 @@
+Improvements from the previous version (Spawner Tweaker v2.6.0 for 26.3):
+
+Bugs:
+-Fixed an issue with spawners with spaces in their names not being givable
