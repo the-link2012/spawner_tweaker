@@ -91,5 +91,6 @@ execute if score name temp matches 0 if data storage spawner_tweaker:temp give.s
 scoreboard players set st_give_flag temp 0
 execute if score name temp matches 1.. if data storage spawner_tweaker:temp give.spawner run function spawner_tweaker:give_spawners/give_item_2 with storage spawner_tweaker:temp give
 execute if score name temp matches 1.. if score st_give_flag temp matches 0 if data storage spawner_tweaker:temp give.spawner run function spawner_tweaker:give_spawners/give_item_3 with storage spawner_tweaker:temp give
+execute if score name temp matches 1.. if score st_give_flag temp matches 0 if data storage spawner_tweaker:temp give.spawner run function spawner_tweaker:give_spawners/give_item_fallback with storage spawner_tweaker:temp give
 execute unless data storage spawner_tweaker:temp give.spawner run tellraw @s[tag=st_give_single] {"color":"red","text":"This spawner id does not exist"}
 execute unless data storage spawner_tweaker:temp give.spawner run playsound minecraft:block.note_block.didgeridoo master @s[tag=st_give_single] ~ ~ ~ 1 1

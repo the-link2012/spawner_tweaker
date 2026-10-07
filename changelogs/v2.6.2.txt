@@ -1,0 +1,4 @@
+Improvements from the previous version (Spawner Tweaker v2.6.1 for 26.3):
+
+QOL:
+-Added fallback option for when spawner names fail to generate
